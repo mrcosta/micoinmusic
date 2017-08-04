@@ -1,0 +1,10 @@
+test:
+  image: intelligentpathways/java8
+  working_dir: /usr/app
+  volumes:
+     - .:/usr/app
+
+app:
+  build: .
+  ports:
+       - "8080:8080"

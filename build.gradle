@@ -1,0 +1,14 @@
+plugins {
+    id 'java'
+    id 'idea'
+    id 'org.springframework.boot' version '1.5.4.RELEASE'
+    id 'jacoco'
+}
+
+repositories {
+    jcenter()
+}
+
+apply from: 'gradle/dependencies.gradle'
+apply from: 'gradle/integration-test.gradle'
+apply from: 'gradle/jacoco.gradle'

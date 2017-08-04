@@ -1,0 +1,10 @@
+logging:
+  level:
+    root: INFO
+    org:
+      springframework:
+        web: INFO
+  file: logs/spring.log
+
+server:
+  port: ${PORT:8080}
