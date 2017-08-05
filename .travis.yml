@@ -1,9 +1,15 @@
 sudo: required
+
 services:
 - docker
+
 language: java
+
 jdk:
 - oraclejdk8
+
+install: true
+
 jobs:
   include:
   - stage: run tests
@@ -14,7 +20,7 @@ jobs:
     script: docker-compose run test ./gradlew bootRepackage
   - stage: generate and upload test coverage
     script:
-    - "./gradlew jacocoTestReport"
+    - docker-compose run test ./gradlew jacocoTestReport
     - bash <(curl -s https://codecov.io/bash)
   - stage: upload image and deploy to heroku
     script:
