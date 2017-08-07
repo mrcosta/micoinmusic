@@ -1,9 +1,9 @@
 test:
   image: intelligentpathways/java8
+  working_dir: /usr/app
   volumes:
     - .:/usr/app
-    - $HOME/.gradle:/root/.gradle
-  working_dir: /usr/app
+#    - $HOME/.gradle:/root/.gradle
 app:
   build: .
   ports:
