@@ -7,14 +7,15 @@ jdk:
 install: true
 jobs:
   include:
-  - stage: run tests, upload coverage report and create jar application
+  - stage: run tests and upload coverage report
     script:
     - docker-compose run test ./gradlew clean test
-    - docker-compose run test ./gradlew integrationTest jacocoTestReport
+    - docker-compose run test ./gradlew integrationTest
+    - docker-compose run test ./gradlew jacocoTestReport
     - bash <(curl -s https://codecov.io/bash)
-    - docker-compose run test ./gradlew bootRepackage
-  - stage: build, upload image and deploy to heroku
+  - stage: create jar, build and upload image and deploy to heroku
     script:
+    - docker-compose run test ./gradlew bootRepackage
     - sh travis/deploy_dockerhub.sh
     - test “$TRAVIS_BRANCH” = “master” && sh travis/deploy_heroku.sh
 env:

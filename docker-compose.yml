@@ -3,7 +3,7 @@ test:
   working_dir: /usr/app
   volumes:
     - .:/usr/app
-#    - $HOME/.gradle:/root/.gradle
+    - $HOME/.gradle:/root/.gradle
 app:
   build: .
   ports:
