@@ -1,4 +1,4 @@
-package com.doodle.pigeon.controllers;
+package com.micoinmusic.controllers;
 
 import org.junit.Rule;
 import org.junit.Test;

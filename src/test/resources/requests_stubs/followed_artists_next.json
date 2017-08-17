@@ -1,0 +1,72 @@
+{
+  "artists" : {
+    "items" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/0nmQIMXWTXfhgOBdNzhGOs"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 1557793
+      },
+      "genres" : [ "alternative metal", "nu metal", "pop punk", "post-grunge", "rock" ],
+      "href" : "https://api.spotify.com/v1/artists/0nmQIMXWTXfhgOBdNzhGOs",
+      "id" : "0nmQIMXWTXfhgOBdNzhGOs",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/14775756a3edc199e5599486eb528ab6f62e7cbc",
+        "width" : 640
+      }, {
+        "height" : 320,
+        "url" : "https://i.scdn.co/image/c358aeee88e883a72c9370c4279b2223079fe523",
+        "width" : 320
+      }, {
+        "height" : 160,
+        "url" : "https://i.scdn.co/image/347d34385f1a3ee5dd88a02271d06055825c9f85",
+        "width" : 160
+      } ],
+      "name" : "Avenged Sevenfold",
+      "popularity" : 79,
+      "type" : "artist",
+      "uri" : "spotify:artist:0nmQIMXWTXfhgOBdNzhGOs"
+    }, {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/0ohvsn0lgt51qZUbu9ct4s"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 32224
+      },
+      "genres" : [ "brazilian indie", "mpb", "rock gaucho" ],
+      "href" : "https://api.spotify.com/v1/artists/0ohvsn0lgt51qZUbu9ct4s",
+      "id" : "0ohvsn0lgt51qZUbu9ct4s",
+      "images" : [ {
+        "height" : 467,
+        "url" : "https://i.scdn.co/image/74b99ed4200537adec4edc1464443a56604530e0",
+        "width" : 700
+      }, {
+        "height" : 427,
+        "url" : "https://i.scdn.co/image/ee685873f4ba9c7059e5722fb1f8582ba494ae01",
+        "width" : 640
+      }, {
+        "height" : 133,
+        "url" : "https://i.scdn.co/image/59b49bbe84f58f8461204d55f9f83cccbb0d6150",
+        "width" : 199
+      }, {
+        "height" : 43,
+        "url" : "https://i.scdn.co/image/366d020960b29ad92fc13e601d95a9a76354fd67",
+        "width" : 64
+      } ],
+      "name" : "Boogarins",
+      "popularity" : 49,
+      "type" : "artist",
+      "uri" : "spotify:artist:0ohvsn0lgt51qZUbu9ct4s"
+    } ],
+    "next" : null,
+    "total" : 4,
+    "cursors" : {
+      "after" : null
+    },
+    "limit" : 2,
+    "href" : "https://api.spotify.com/v1/me/following?type=artist&after=0nCiidE5GgDrc5kWN3NZgZ&limit=2"
+  }
+}

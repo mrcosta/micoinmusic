@@ -1,6 +1,6 @@
-package com.doodle.pigeon.configuration;
+package com.micoinmusic.configuration;
 
-import com.doodle.pigeon.interceptors.RequestInterceptor;
+import com.micoinmusic.interceptors.RequestInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;

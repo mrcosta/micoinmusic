@@ -1,0 +1,76 @@
+{
+  "artists" : {
+    "items" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/0l5fDpqfSweuzhaAtWa76A"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 22304
+      },
+      "genres" : [ "chamber psych", "chillwave", "garage psych", "indie dream pop", "indie psych-rock", "indietronica", "noise pop", "nu gaze", "preverb", "shimmer pop", "shiver pop" ],
+      "href" : "https://api.spotify.com/v1/artists/0l5fDpqfSweuzhaAtWa76A",
+      "id" : "0l5fDpqfSweuzhaAtWa76A",
+      "images" : [ {
+        "height" : 665,
+        "url" : "https://i.scdn.co/image/7d7710678708a610d0bf0da5a1dc7bbb51f2bd26",
+        "width" : 999
+      }, {
+        "height" : 426,
+        "url" : "https://i.scdn.co/image/4525ec3235f217f465fc7e4a93b4fa473a2fdf07",
+        "width" : 640
+      }, {
+        "height" : 133,
+        "url" : "https://i.scdn.co/image/8abbe372709857e6bb588772bc350560bbde5b10",
+        "width" : 200
+      }, {
+        "height" : 43,
+        "url" : "https://i.scdn.co/image/de9ce001eb8552e27ca94f34cbf76d38b3fdbc69",
+        "width" : 64
+      } ],
+      "name" : "Porcelain Raft",
+      "popularity" : 39,
+      "type" : "artist",
+      "uri" : "spotify:artist:0l5fDpqfSweuzhaAtWa76A"
+    }, {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/0nCiidE5GgDrc5kWN3NZgZ"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 133673
+      },
+      "genres" : [ "album rock", "art rock", "blues-rock", "british blues", "classic rock", "hard rock", "jazz fusion", "mellow gold", "progressive rock", "psychedelic rock", "rock", "soft rock", "space rock", "symphonic rock" ],
+      "href" : "https://api.spotify.com/v1/artists/0nCiidE5GgDrc5kWN3NZgZ",
+      "id" : "0nCiidE5GgDrc5kWN3NZgZ",
+      "images" : [ {
+        "height" : 666,
+        "url" : "https://i.scdn.co/image/492cf7afbe3a7be6d6d2bda5c71a52e3cc1c9d3d",
+        "width" : 999
+      }, {
+        "height" : 427,
+        "url" : "https://i.scdn.co/image/b08d44bef3e4d8cb3589acc61389a9d62098be47",
+        "width" : 640
+      }, {
+        "height" : 133,
+        "url" : "https://i.scdn.co/image/0cbd0b45bdf8659a6d73304c0ae44d8b0dca221d",
+        "width" : 200
+      }, {
+        "height" : 43,
+        "url" : "https://i.scdn.co/image/c2f340972877f61ac57c32e6a059a513b4805761",
+        "width" : 64
+      } ],
+      "name" : "Emerson, Lake & Palmer",
+      "popularity" : 54,
+      "type" : "artist",
+      "uri" : "spotify:artist:0nCiidE5GgDrc5kWN3NZgZ"
+    } ],
+    "next" : null,
+    "total" : 430,
+    "cursors" : {
+      "after" : null
+    },
+    "limit" : 2,
+    "href" : "https://api.spotify.com/v1/me/following?type=artist&after=0kx1rAzjWHdmbNE9KunSgd&limit=2"
+  }
+}

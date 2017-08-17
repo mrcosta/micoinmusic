@@ -1,4 +1,4 @@
-FROM intelligentpathways/java8
+FROM openjdk/8-jre
 
 COPY build/libs/*.jar /usr/app/
 WORKDIR /usr/app

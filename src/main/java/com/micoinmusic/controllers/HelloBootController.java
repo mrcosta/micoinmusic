@@ -1,4 +1,4 @@
-package com.doodle.pigeon.controllers;
+package com.micoinmusic.controllers;
 
 import org.slf4j.Logger;
 import org.springframework.web.bind.annotation.RequestMapping;

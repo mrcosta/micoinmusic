@@ -1,4 +1,4 @@
-package com.doodle.pigeon.interceptors;
+package com.micoinmusic.interceptors;
 
 import org.slf4j.Logger;
 import org.springframework.stereotype.Component;

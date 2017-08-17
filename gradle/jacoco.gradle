@@ -8,8 +8,8 @@ jacocoTestReport {
             fileTree(dir: it,
                     exclude: [
                             '**/Application.class**',
-                            'com/booter/interceptors/**',
-                            'com/booter/configuration/**'
+                            'com/micoinmusic/interceptors/**',
+                            'com/micoinmusic/configuration/**'
                     ])
         })
     }

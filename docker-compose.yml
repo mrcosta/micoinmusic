@@ -1,5 +1,5 @@
 test:
-  image: intelligentpathways/java8
+  image: openjdk:8
   working_dir: /usr/app
   volumes:
     - .:/usr/app
