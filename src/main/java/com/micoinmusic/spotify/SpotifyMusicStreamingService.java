@@ -24,12 +24,12 @@ public class SpotifyMusicStreamingService implements MusicStreamingService {
     }
 
     @Override
-    public List<Artist> getFollowedArtists() {
+    public List<Artist> getFollowedArtists(String authToken) {
         JsonElement nextCursor = null;
         List<Artist> artists = new ArrayList<>();
 
         while (isNotTheLastRequest(nextCursor)) {
-            String requestResponse = requestFollowedArtists(nextCursor);
+            String requestResponse = requestFollowedArtists(nextCursor, authToken);
             artists.addAll(getArtistsFromResponse(requestResponse));
 
             nextCursor = getNextCursor(requestResponse);
@@ -42,10 +42,10 @@ public class SpotifyMusicStreamingService implements MusicStreamingService {
         return parser.parse(requestResponse).getAsJsonObject().getAsJsonObject("artists").getAsJsonObject("cursors").get("after");
     }
 
-    private String requestFollowedArtists(JsonElement nextCursor) {
+    private String requestFollowedArtists(JsonElement nextCursor, String authToken) {
         String after = nextCursor == null ? "" : "&after=" + nextCursor.getAsString();
 
-        return spotifyHttpClient.doCall(FOLLOWED_ARTISTS_ENDPOINT + after);
+        return spotifyHttpClient.doCall(FOLLOWED_ARTISTS_ENDPOINT + after, authToken);
     }
 
     private List<Artist> getArtistsFromResponse(String response) {

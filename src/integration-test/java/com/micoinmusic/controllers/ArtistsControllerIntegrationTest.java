@@ -1,5 +1,6 @@
 package com.micoinmusic.controllers;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,15 +18,18 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-public class HelloBootControllerIntegrationTest {
+public class ArtistsControllerIntegrationTest {
 
     @Autowired
     private MockMvc mvc;
 
     @Test
+    @Ignore
     public void shouldSayHi() throws Exception {
-        mvc.perform(get("/hi").accept(APPLICATION_JSON))
+        String authToken = "BQDPGgmMtH1pMBKpg7EU8IfHfvDVi9smoY8eYxOTthoLw6sVvEZzAMZhHFWaoG6Dv_TginHHJbNkO7qH1NV1OlPUwVKsyGci39KgrsaFfzJLPSFa14HCG3qRXRL579xlJhmnaBha71ItsKFD7NjI0Q";
+
+        mvc.perform(get("/artists?authToken=" + authToken).accept(APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("hello")));
+                .andExpect(content().string(equalTo("432")));
     }
 }

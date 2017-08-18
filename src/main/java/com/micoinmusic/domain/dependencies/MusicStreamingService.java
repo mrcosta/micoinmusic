@@ -5,5 +5,5 @@ import com.micoinmusic.domain.Artist;
 import java.util.List;
 
 public interface MusicStreamingService {
-    public List<Artist> getFollowedArtists();
+    public List<Artist> getFollowedArtists(String authToken);
 }

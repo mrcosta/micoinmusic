@@ -33,7 +33,7 @@ public class SpotifyMusicStreamingServiceTest {
         server = new MockWebServer();
         server.start();
 
-        SpotifyHttpClient spotifyHttpClient = new SpotifyHttpClient(server.url("").toString(), "AQDxVIjCisbrCzM");
+        SpotifyHttpClient spotifyHttpClient = new SpotifyHttpClient(server.url("").toString());
         spotifyMusicStreamingService = new SpotifyMusicStreamingService(spotifyHttpClient);
     }
 
@@ -46,7 +46,7 @@ public class SpotifyMusicStreamingServiceTest {
     public void shouldGetAllTheFollowedArtistsByUser() throws Exception {
         addResponse("requests_stubs/followed_artists_single_request.json");
 
-        List<Artist> followedArtists = spotifyMusicStreamingService.getFollowedArtists();
+        List<Artist> followedArtists = spotifyMusicStreamingService.getFollowedArtists("AQDxVIjCisbrCzM");
         List<String> artistsNames = followedArtists.stream().map(Artist::getName).collect(Collectors.toList());
 
         assertThat(followedArtists.size(), is(2));
@@ -59,7 +59,7 @@ public class SpotifyMusicStreamingServiceTest {
         addResponse("requests_stubs/followed_artists.json");
         addResponse("requests_stubs/followed_artists_next.json");
 
-        List<Artist> followedArtists = spotifyMusicStreamingService.getFollowedArtists();
+        List<Artist> followedArtists = spotifyMusicStreamingService.getFollowedArtists("AQDxVIjCisbrCzM");
         List<String> artistsNames = followedArtists.stream().map(Artist::getName).collect(Collectors.toList());
 
         assertThat(followedArtists.size(), is(4));
@@ -71,7 +71,7 @@ public class SpotifyMusicStreamingServiceTest {
     @Test
     public void shouldReturnAnEmptyListOfArtists() throws Exception {
         addResponse("requests_stubs/followed_artists_empty.json");
-        assertThat(spotifyMusicStreamingService.getFollowedArtists().size(), is(0));
+        assertThat(spotifyMusicStreamingService.getFollowedArtists("AQDxVIjCisbrCzM").size(), is(0));
     }
 
     @Test
@@ -81,7 +81,7 @@ public class SpotifyMusicStreamingServiceTest {
         expectedException.expect(SpotifyRequestException.class);
         expectedException.expectMessage("Invalid access token");
 
-        spotifyMusicStreamingService.getFollowedArtists();
+        spotifyMusicStreamingService.getFollowedArtists("AQDxVIjCisbrCzM");
     }
 
     private void addUnauthorizedResponse() throws URISyntaxException, IOException {

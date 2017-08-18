@@ -18,9 +18,8 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 public class SpotifyHttpClient {
 
     private String baseUrl;
-    private String oauthToken;
 
-    public String doCall(String endpoint) {
+    public String doCall(String endpoint, String oauthToken) {
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
                 .addHeader(ACCEPT, APPLICATION_JSON_VALUE)
