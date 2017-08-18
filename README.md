@@ -14,3 +14,9 @@ https://accounts.spotify.com/authorize/?client_id=2c7dce3390db4d20be2c80ac7c7e4a
 
 #/v1/artists/{id}/albums	Get an artist's albums
 #/v1/albums?ids={ids} Get several albums
+
+# TODOS:
+
+* multiple requests: do the other requests while still loading the followed artists by user (search for its albums and musics)
+* compare with last fm (how is the popularity of a song in last fm compared to spotify)
+* what is the percentage of scrobbles being doing on spotify considering the number of scrobllers in last fm.
