@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.client.HttpServerErrorException;
 
 import java.io.IOException;
 
@@ -30,17 +32,13 @@ public class SpotifyHttpClient {
             Response response = client.newCall(request).execute();
             return getStringResponse(response);
         } catch (IOException e) {
-            throw new RuntimeException("Network issues during request");
+            throw new HttpServerErrorException(HttpStatus.GATEWAY_TIMEOUT, "Network issues during request or problems parsing the response");
         }
     }
 
     private String getStringResponse(Response response) throws IOException {
         if (response.isSuccessful()) {
-            try {
-                return response.body().string();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            return response.body().string();
         }
 
         throw new SpotifyRequestException(response.code(), getErrorMessageFromResponse(response));

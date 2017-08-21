@@ -4,9 +4,11 @@ import com.micoinmusic.domain.Artist;
 import com.micoinmusic.spotify.exceptions.SpotifyRequestException;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
+import okhttp3.mockwebserver.SocketPolicy;
 import org.junit.*;
 import org.junit.rules.ExpectedException;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.client.HttpServerErrorException;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -75,11 +77,21 @@ public class SpotifyMusicStreamingServiceTest {
     }
 
     @Test
-    public void shouldThrowExceptionWhenSomethingWentWrongDuringARequest() throws Exception {
+    public void shouldThrowExceptionWhenAccessTokenIsInvalid() throws Exception {
         addUnauthorizedResponse();
 
         expectedException.expect(SpotifyRequestException.class);
         expectedException.expectMessage("Invalid access token");
+
+        spotifyMusicStreamingService.getFollowedArtists("AQDxVIjCisbrCzM");
+    }
+
+    @Test
+    public void shouldThrowExceptionWhenSomethingWentWrongDuringARequest() throws Exception {
+        server.enqueue(new MockResponse().setSocketPolicy(SocketPolicy.DISCONNECT_AFTER_REQUEST));
+
+        expectedException.expect(HttpServerErrorException.class);
+        expectedException.expectMessage("Network issues during request");
 
         spotifyMusicStreamingService.getFollowedArtists("AQDxVIjCisbrCzM");
     }
