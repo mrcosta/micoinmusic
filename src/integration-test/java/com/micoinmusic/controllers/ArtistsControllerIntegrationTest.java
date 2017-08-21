@@ -26,7 +26,7 @@ public class ArtistsControllerIntegrationTest {
     @Test
     @Ignore
     public void shouldSayHi() throws Exception {
-        String authToken = "BQDPGgmMtH1pMBKpg7EU8IfHfvDVi9smoY8eYxOTthoLw6sVvEZzAMZhHFWaoG6Dv_TginHHJbNkO7qH1NV1OlPUwVKsyGci39KgrsaFfzJLPSFa14HCG3qRXRL579xlJhmnaBha71ItsKFD7NjI0Q";
+        String authToken = "BQAzjAmVDmUxeuOMqvD5wr-89-1E4Lof-UYr-RNlQ_INSID02tpIAouUSfg95tVPO6QGDCbNMldWv8VpCUVUC_ReOqV64AhhqLCIp-Yq8zCSK9WWWdNFs7qhjJdT7QmCHwXEhlC0lcK6Br65opcnXc9PB__fkSGOnvEu9GGd3ibCB2lwazo7jPwZ4mva3ce7ypLJKVeYNKoEqpsIRF5NxLLowiw9PaL-JIHgtE5dj-SQQJ0hQr14eXHiCiObys-too-EzDVSaInjnCeEjfjY0nqjbVpWKgX_hE4fQYBjy6ejFA";
 
         mvc.perform(get("/artists?authToken=" + authToken).accept(APPLICATION_JSON))
                 .andExpect(status().isOk())
