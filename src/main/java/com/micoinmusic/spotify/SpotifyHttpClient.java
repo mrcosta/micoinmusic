@@ -11,7 +11,6 @@ import java.io.IOException;
 
 import static com.google.common.net.HttpHeaders.ACCEPT;
 import static com.google.common.net.HttpHeaders.AUTHORIZATION;
-import static java.net.HttpURLConnection.HTTP_OK;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @AllArgsConstructor
@@ -36,7 +35,7 @@ public class SpotifyHttpClient {
     }
 
     private String getStringResponse(Response response) throws IOException {
-        if (response.code() == HTTP_OK) {
+        if (response.isSuccessful()) {
             try {
                 return response.body().string();
             } catch (IOException e) {
