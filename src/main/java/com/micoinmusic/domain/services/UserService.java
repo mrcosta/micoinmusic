@@ -1,21 +1,20 @@
 package com.micoinmusic.domain.services;
 
-import com.micoinmusic.domain.dependencies.MusicStreamingService;
-import com.micoinmusic.spotify.SpotifyHttpClient;
-import com.micoinmusic.spotify.SpotifyMusicStreamingService;
+import com.micoinmusic.domain.dependencies.ProfileService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserService {
 
-    private MusicStreamingService musicStreamingService;
+    private ProfileService profileService;
 
-    public UserService() {
-        SpotifyHttpClient spotifyHttpClient = new SpotifyHttpClient("https://api.spotify.com/");
-        musicStreamingService = new SpotifyMusicStreamingService(spotifyHttpClient);
+    @Autowired
+    public UserService(ProfileService profileService) {
+        this.profileService = profileService;
     }
 
     public String getFollowedArtists(String authToken) {
-        return String.valueOf(musicStreamingService.getFollowedArtists(authToken).size());
+        return String.valueOf(profileService.getFollowedArtists(authToken).size());
     }
 }

@@ -3,13 +3,16 @@ package com.micoinmusic.spotify;
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
 import com.micoinmusic.domain.Artist;
-import com.micoinmusic.domain.dependencies.MusicStreamingService;
+import com.micoinmusic.domain.dependencies.ProfileService;
+import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SpotifyMusicStreamingService implements MusicStreamingService {
+@NoArgsConstructor
+public class SpotifyProfileService implements ProfileService {
 
     private static final String FOLLOWED_ARTISTS_ENDPOINT = "v1/me/following?type=artist&limit=50";
 
@@ -17,13 +20,12 @@ public class SpotifyMusicStreamingService implements MusicStreamingService {
     private JsonParser parser;
     private SpotifyHttpClient spotifyHttpClient;
 
-    public SpotifyMusicStreamingService(SpotifyHttpClient spotifyHttpClient) {
+    public SpotifyProfileService(String baseUrl) {
         this.gson = new Gson();
         this.parser = new JsonParser();
-        this.spotifyHttpClient = spotifyHttpClient;
+        this.spotifyHttpClient = new SpotifyHttpClient(baseUrl);
     }
 
-    @Override
     public List<Artist> getFollowedArtists(String authToken) {
         JsonElement nextCursor = null;
         List<Artist> artists = new ArrayList<>();

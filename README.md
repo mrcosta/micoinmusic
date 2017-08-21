@@ -13,6 +13,8 @@ https://accounts.spotify.com/authorize/?client_id=2c7dce3390db4d20be2c80ac7c7e4a
 
 
 #/v1/artists/{id}/albums	Get an artist's albums
+curl -X GET "https://api.spotify.com/v1/artists/12Chz98pHFMPJEknJQMWvI/albums?album_type=album&market=US&limit=50" -H "Accept: application/json" -H "Authorization: Bearer BQBExk-SgQKDR-kaQEzfX_q6tWqhFgVdjFrNfvGk6hKIYD4-Ld10JOfM-4eif7wYHJISCGF36vec5W2u3Jwry6dWwwk_01LYoOB2oRXGdFal-JOm2IpTpiVk5ZL0-Q7D7Mp3TQKm11Xlhkc7934TqBZKlj0cYHaYuEdb4yOzgH4FlCH14e6obhwxMel3drjiFJq7sF0ceiVNNKm39jC5g9jm68edMHZnjeCd05ATgMGXSLxFp0IPEpw3qM-HcfB_ZQgqr8yDeBN_J3poyhm6dEaLRj1NbobS4fbfJmXMTujFdw"
+
 #/v1/albums?ids={ids} Get several albums
 
 # TODOS:
