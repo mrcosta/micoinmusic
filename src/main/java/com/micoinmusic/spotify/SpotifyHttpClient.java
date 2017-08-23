@@ -47,7 +47,7 @@ public class SpotifyHttpClient {
             return response.body().string();
         }
 
-        throw new SpotifyRequestException(response.code(), getErrorMessageFromResponse(response));
+        throw new SpotifyRequestException(getErrorMessageFromResponse(response));
     }
 
     private String getErrorMessageFromResponse(Response response) throws IOException {

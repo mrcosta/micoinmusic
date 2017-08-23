@@ -6,5 +6,5 @@ import java.util.List;
 
 @Getter
 public class Tracks {
-    private List<Item> items;
+    private List<Track> items;
 }
