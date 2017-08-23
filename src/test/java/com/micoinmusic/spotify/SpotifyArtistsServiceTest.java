@@ -6,6 +6,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.List;
 
 import static java.util.stream.Collectors.toList;
@@ -48,5 +50,18 @@ public class SpotifyArtistsServiceTest extends HttpBuildResponses {
 
         assertThat(albums.size(), is(0));
         assertThat(server.takeRequest().getPath(), is("/v1/artists/4BclNkZtAUq1YrYNzye3N7/albums?album_type=album&market=US&limit=50"));
+    }
+
+    @Test
+    public void shouldGetTheAlbumsForTheGivenArtistWithReleaseDate() throws Exception {
+        addResponse("requests_stubs/artists/artist_albums_with_release_date.json");
+
+        List<Album> albums = spotifyArtistsService.getAlbumsWithReleaseDate("AQDxVIjCisbrCzM", Arrays.asList("2wart5Qjnvx1fd7LPdQxgJ", "2m7L60M210ABzrY9GLyBPZ", "3KuXEGcqLcnEYWnn3OEGy0"));
+        List<LocalDate> albumsReleaseDates = albums.stream().map(Album::getReleaseDate).collect(toList());
+
+        assertThat(albums.size(), is(3));
+        assertThat(albumsReleaseDates.get(0).getYear(), is(2015));
+        assertThat(albumsReleaseDates.get(2).getYear(), is(2012));
+        assertThat(server.takeRequest().getPath(), is("/v1/albums?ids=2wart5Qjnvx1fd7LPdQxgJ,2m7L60M210ABzrY9GLyBPZ,3KuXEGcqLcnEYWnn3OEGy0&market=US"));
     }
 }
