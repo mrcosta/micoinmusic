@@ -14,6 +14,7 @@ import java.util.function.Function;
 public class SpotifyProfileService implements ProfileService {
 
     private static final String FOLLOWED_ARTISTS_ENDPOINT = "v1/me/following?type=artist&limit=50";
+    private static final String FIRST_REQUEST = "FIRST_REQUEST";
 
     private SpotifyJsonParser spotifyJsonParser;
     private SpotifyHttpClient spotifyHttpClient;
@@ -28,7 +29,7 @@ public class SpotifyProfileService implements ProfileService {
     }
 
     public List<Artist> getFollowedArtists(String authToken) {
-        JsonElement nextCursor = null;
+        String nextCursor = FIRST_REQUEST;
         List<Artist> artists = new ArrayList<>();
 
         while (isNotTheLastRequest(nextCursor)) {
@@ -41,12 +42,13 @@ public class SpotifyProfileService implements ProfileService {
         return artists;
     }
 
-    private JsonElement getNextCursor(String requestResponse) {
-        return new JsonParser().parse(requestResponse).getAsJsonObject().getAsJsonObject("artists").getAsJsonObject("cursors").get("after");
+    private String getNextCursor(String requestResponse) {
+        Function<JsonObject, JsonElement> elementToGet = jsonObject -> jsonObject.getAsJsonObject("artists").getAsJsonObject("cursors").get("after");
+        return spotifyJsonParser.getSingleElementFrom(requestResponse, String.class, elementToGet);
     }
 
-    private String requestFollowedArtists(JsonElement nextCursor, String authToken) {
-        String after = nextCursor == null ? "" : "&after=" + nextCursor.getAsString();
+    private String requestFollowedArtists(String nextCursor, String authToken) {
+        String after = FIRST_REQUEST.equals(nextCursor) ? "" : "&after=" + nextCursor;
 
         return spotifyHttpClient.doCall(FOLLOWED_ARTISTS_ENDPOINT + after, authToken);
     }
@@ -56,7 +58,7 @@ public class SpotifyProfileService implements ProfileService {
         return spotifyJsonParser.getElementsFrom(response, Artist.class, elementsToGet);
     }
 
-    private boolean isNotTheLastRequest(JsonElement nextCursor) {
-        return !JsonNull.class.isInstance(nextCursor);
+    private boolean isNotTheLastRequest(String nextCursor) {
+        return nextCursor != null;
     }
 }

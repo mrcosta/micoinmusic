@@ -17,4 +17,12 @@ public class SpotifyJsonParser {
 
         return new Gson().fromJson(elementsInJson, convertTo);
     }
+
+    public <T> T getSingleElementFrom(String response, Class clazz, Function<JsonObject, JsonElement> getElement) {
+        JsonObject jsonObject = new JsonParser().parse(response).getAsJsonObject();
+        JsonElement element = getElement.apply(jsonObject);
+        Type convertTo = TypeToken.get(clazz).getType();
+
+        return new Gson().fromJson(element, convertTo);
+    }
 }
