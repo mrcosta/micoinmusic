@@ -1,33 +1,29 @@
 package com.micoinmusic.spotify;
 
 import com.google.gson.*;
-import com.google.gson.reflect.TypeToken;
 import com.micoinmusic.domain.Artist;
 import com.micoinmusic.domain.dependencies.ProfileService;
+import com.micoinmusic.spotify.parsers.SpotifyJsonParser;
 import org.springframework.stereotype.Service;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
 @Service
 public class SpotifyProfileService implements ProfileService {
 
     private static final String FOLLOWED_ARTISTS_ENDPOINT = "v1/me/following?type=artist&limit=50";
 
-    private Gson gson;
-    private JsonParser parser;
+    private SpotifyJsonParser spotifyJsonParser;
     private SpotifyHttpClient spotifyHttpClient;
 
     public SpotifyProfileService(String baseUrl) {
-        this.gson = new Gson();
-        this.parser = new JsonParser();
+        this.spotifyJsonParser = new SpotifyJsonParser();
         this.spotifyHttpClient = new SpotifyHttpClient(baseUrl);
     }
 
     public SpotifyProfileService() {
-        this.gson = new Gson();
-        this.parser = new JsonParser();
         this.spotifyHttpClient = new SpotifyHttpClient();
     }
 
@@ -46,7 +42,7 @@ public class SpotifyProfileService implements ProfileService {
     }
 
     private JsonElement getNextCursor(String requestResponse) {
-        return parser.parse(requestResponse).getAsJsonObject().getAsJsonObject("artists").getAsJsonObject("cursors").get("after");
+        return new JsonParser().parse(requestResponse).getAsJsonObject().getAsJsonObject("artists").getAsJsonObject("cursors").get("after");
     }
 
     private String requestFollowedArtists(JsonElement nextCursor, String authToken) {
@@ -56,11 +52,8 @@ public class SpotifyProfileService implements ProfileService {
     }
 
     private List<Artist> getArtistsFromResponse(String response) {
-        JsonObject jsonObject = parser.parse(response).getAsJsonObject();
-        JsonArray artistsInJson = jsonObject.getAsJsonObject("artists").getAsJsonArray("items");
-        Type convertTo = new TypeToken<List<Artist>>(){}.getType();
-
-        return gson.fromJson(artistsInJson, convertTo);
+        Function<JsonObject, JsonArray> elementsToGet = jsonObject -> jsonObject.getAsJsonObject("artists").getAsJsonArray("items");
+        return spotifyJsonParser.getElementsFrom(response, Artist.class, elementsToGet);
     }
 
     private boolean isNotTheLastRequest(JsonElement nextCursor) {
