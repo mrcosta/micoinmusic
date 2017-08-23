@@ -12,4 +12,6 @@ public class Album {
 
     @SerializedName("release_date")
     private LocalDate releaseDate;
+
+    private Tracks tracks;
 }

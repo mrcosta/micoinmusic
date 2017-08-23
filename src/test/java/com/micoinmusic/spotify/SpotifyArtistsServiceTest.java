@@ -61,6 +61,8 @@ public class SpotifyArtistsServiceTest extends HttpBuildResponses {
 
         assertThat(albums.size(), is(3));
         assertThat(albumsReleaseDates.get(0).getYear(), is(2015));
+        assertThat(albums.get(0).getTracks().getItems().get(0).getName(), is("Dead Inside"));
+        assertThat(albums.get(0).getTracks().getItems().get(0).getId(), is("2daZovie6pc2ZK7StayD1K"));
         assertThat(albumsReleaseDates.get(2).getYear(), is(2012));
         assertThat(server.takeRequest().getPath(), is("/v1/albums?ids=2wart5Qjnvx1fd7LPdQxgJ,2m7L60M210ABzrY9GLyBPZ,3KuXEGcqLcnEYWnn3OEGy0&market=US"));
     }
