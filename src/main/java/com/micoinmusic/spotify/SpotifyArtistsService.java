@@ -29,11 +29,6 @@ public class SpotifyArtistsService implements ArtistsService {
         this.spotifyHttpClient = new SpotifyHttpClient(baseUrl);
     }
 
-//    public SpotifyArtistsService() {
-//        this.spotifyJsonParser = new SpotifyJsonParser();
-//        this.spotifyHttpClient = new SpotifyHttpClient();
-//    }
-
     @Override
     public List<Album> getAlbums(String authToken, String artistId) {
         String url = ARTISTS_ALBUNS.replace("<artistId>", artistId);
