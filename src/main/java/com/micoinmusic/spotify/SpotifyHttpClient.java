@@ -20,11 +20,7 @@ public class SpotifyHttpClient {
 
     public static final String API_BASE_URL = "https://api.spotify.com/";
 
-    private String baseUrl;
-
-    public SpotifyHttpClient() {
-        this.baseUrl = API_BASE_URL;
-    }
+    private String baseUrl = API_BASE_URL;
 
     public String doCall(String endpoint, String oauthToken) {
         OkHttpClient client = new OkHttpClient();

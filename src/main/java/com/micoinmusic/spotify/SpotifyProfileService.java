@@ -24,10 +24,6 @@ public class SpotifyProfileService implements ProfileService {
         this.spotifyHttpClient = new SpotifyHttpClient(baseUrl);
     }
 
-    public SpotifyProfileService() {
-        this.spotifyHttpClient = new SpotifyHttpClient();
-    }
-
     @Override
     public List<Artist> getFollowedArtists(String authToken) {
         String nextCursor = FIRST_REQUEST;
