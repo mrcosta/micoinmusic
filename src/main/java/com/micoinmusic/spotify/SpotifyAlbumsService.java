@@ -3,7 +3,7 @@ package com.micoinmusic.spotify;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.micoinmusic.domain.Album;
-import com.micoinmusic.domain.dependencies.ArtistsService;
+import com.micoinmusic.domain.dependencies.AlbumsService;
 import com.micoinmusic.spotify.parsers.SpotifyJsonParser;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @NoArgsConstructor
-public class SpotifyArtistsService implements ArtistsService {
+public class SpotifyAlbumsService implements AlbumsService {
 
     private static final String ARTISTS_ALBUNS = "v1/artists/<artistId>/albums?album_type=album&market=US&limit=50";
     private static final String ALBUMS = "v1/albums?ids=<albumsId>&market=US";
@@ -24,7 +24,7 @@ public class SpotifyArtistsService implements ArtistsService {
     @Autowired
     private SpotifyHttpClient spotifyHttpClient;
 
-    public SpotifyArtistsService(String baseUrl) {
+    public SpotifyAlbumsService(String baseUrl) {
         this.spotifyJsonParser = new SpotifyJsonParser();
         this.spotifyHttpClient = new SpotifyHttpClient(baseUrl);
     }

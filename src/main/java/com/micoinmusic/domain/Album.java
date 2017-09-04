@@ -28,6 +28,11 @@ public class Album {
         this.releaseDate = releaseDate;
     }
 
+    public Album(String name, Tracks tracks) {
+        this.name = name;
+        this.tracks = tracks;
+    }
+
     public boolean isFromCurrentYear() {
         return this.getReleaseDate().getYear() == LocalDate.now().getYear();
     }

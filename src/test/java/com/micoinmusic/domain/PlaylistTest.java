@@ -4,7 +4,6 @@ import com.micoinmusic.spotify.SpotifyProfileService;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.mockito.Mock;
 
 import java.util.List;
 import java.util.function.Function;
@@ -13,6 +12,7 @@ import static java.util.Arrays.asList;
 import static java.util.stream.Collectors.toList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 
@@ -22,30 +22,39 @@ public class PlaylistTest {
 
     private Playlist playlist;
 
-    @Mock private SpotifyProfileService spotifyProfileService;
+    private SpotifyProfileService spotifyProfileService;
+    private Albums albums;
 
     @Before
     public void setUp() {
-        playlist = new Playlist(spotifyProfileService);
+        spotifyProfileService = mock(SpotifyProfileService.class);
+        albums = mock(Albums.class);
+
+        playlist = new Playlist(spotifyProfileService, albums);
     }
 
     @Test
-    @Ignore
     public void shouldCreatePlaylistForTheGivenYear() throws Exception {
-        List<Artist> followedArtists = asList(new Artist("Lorde", "1"), new Artist("Arcade Fire", "5"), new Artist("Foster the People", "9"));
-        when(spotifyProfileService.getFollowedArtists(AUTH_TOKEN)).thenReturn(followedArtists);
+        when(spotifyProfileService.getFollowedArtists(AUTH_TOKEN)).thenReturn(asList(new Artist("Lorde", "1"), new Artist("Arcade Fire", "5"), new Artist("Foster the People", "9")));
+
+        Tracks melodramaTracks = new Tracks(asList(new Track("Green Light", "glId", "Lorde", "Melodrama")));
+        when(albums.getArtistAlbumFromCurrentYear(AUTH_TOKEN, "1")).thenReturn(new Album("Melodrama", melodramaTracks));
+
+        when(albums.getArtistAlbumFromCurrentYear(AUTH_TOKEN, "5")).thenReturn(null);
+
+        Tracks fosterTracks = new Tracks(asList(new Track("Sit Next to Me", "sntmId", "Foster The People", "Sacred Hearts Club")));
+        when(albums.getArtistAlbumFromCurrentYear(AUTH_TOKEN, "9")).thenReturn(new Album("Sacred Hearts Club", fosterTracks));
 
         Playlist createdPlaylist = playlist.createPlaylist(AUTH_TOKEN);
-
         List<String> names = getPropertyList(createdPlaylist.getTracks(), Track::getName);
-        List<String> artists = getPropertyList(createdPlaylist.getTracks(), track -> track.getArtist().getName());
-        List<String> albums = getPropertyList(createdPlaylist.getTracks(), track -> track.getAlbum().getName());
+        List<String> artists = getPropertyList(createdPlaylist.getTracks(), Track::getArtist);
+        List<String> albums = getPropertyList(createdPlaylist.getTracks(), Track::getAlbum);
 
         assertThat(createdPlaylist.getName(), is("This 2018 in music"));
-        assertThat(createdPlaylist.getTracks().size(), is(3));
-        assertThat(artists, is(asList("Lorde", "Arcade Fire", "Foster The People")));
-        assertThat(albums, is(asList("Melodrama", "Everything Now", "Sacred Hearts Club")));
-        assertThat(names, is(asList("Green Light", "Everything Now", "Sit Next to Me")));
+        assertThat(createdPlaylist.getTracks().size(), is(2));
+        assertThat(artists, is(asList("Lorde", "Foster The People")));
+        assertThat(albums, is(asList("Melodrama", "Sacred Hearts Club")));
+        assertThat(names, is(asList("Green Light", "Sit Next to Me")));
     }
 
     @Test

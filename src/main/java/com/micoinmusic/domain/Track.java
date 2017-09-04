@@ -1,14 +1,15 @@
 package com.micoinmusic.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
+@AllArgsConstructor
 public class Track {
     private String name;
     private String id;
-    private Artist artist;
-    private Album album;
-    private int popularity;
+    private String artist;
+    private String album;
 
     public Track(String name, String id) {
         this.name = name;

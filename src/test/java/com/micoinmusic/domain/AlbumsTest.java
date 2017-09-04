@@ -1,6 +1,6 @@
 package com.micoinmusic.domain;
 
-import com.micoinmusic.spotify.SpotifyArtistsService;
+import com.micoinmusic.spotify.SpotifyAlbumsService;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -20,11 +20,11 @@ public class AlbumsTest {
     private final static String AUTH_TOKEN = "R4nd0M4UthToken";
 
     private Albums albums;
-    private SpotifyArtistsService spotifyArtistsService;
+    private SpotifyAlbumsService spotifyArtistsService;
 
     @Before
     public void setUp() {
-        spotifyArtistsService = mock(SpotifyArtistsService.class);
+        spotifyArtistsService = mock(SpotifyAlbumsService.class);
         albums = new Albums(spotifyArtistsService);
     }
 

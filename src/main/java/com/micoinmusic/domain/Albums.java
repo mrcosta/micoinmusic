@@ -1,6 +1,6 @@
 package com.micoinmusic.domain;
 
-import com.micoinmusic.domain.dependencies.ArtistsService;
+import com.micoinmusic.domain.dependencies.AlbumsService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -9,16 +9,18 @@ import static java.util.stream.Collectors.toList;
 
 public class Albums {
 
-    private ArtistsService artistsService;
+    private AlbumsService albumsService;
 
     @Autowired
-    public Albums(ArtistsService artistsService) {
-        this.artistsService = artistsService;
+    public Albums(AlbumsService albumsService) {
+        this.albumsService = albumsService;
     }
 
     public Album getArtistAlbumFromCurrentYear(String authToken, String artistId) {
-        List<Album> albums = artistsService.getAlbums(authToken, artistId);
-        List<Album> albumsWithReleaseDate = artistsService.getAlbumsWithReleaseDate(authToken, albums.stream().map(Album::getId).collect(toList()));
+        List<Album> albums = albumsService.getAlbums(authToken, artistId);
+        List<Album> albumsWithReleaseDate = albumsService.getAlbumsWithReleaseDate(authToken, albums.stream().map(Album::getId).collect(toList()));
+
+        // TODO: retrieve the musics with popularity here
 
         return albumsWithReleaseDate.stream().filter(Album::isFromCurrentYear).findFirst().orElse(null);
     }

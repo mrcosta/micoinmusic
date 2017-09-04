@@ -14,14 +14,14 @@ import static java.util.stream.Collectors.toList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-public class SpotifyArtistsServiceTest extends HttpBuildResponses {
+public class SpotifyAlbumsServiceTest extends HttpBuildResponses {
 
-    private SpotifyArtistsService spotifyArtistsService;
+    private SpotifyAlbumsService spotifyArtistsService;
 
     @Before
     public void setUp() throws Exception {
         super.setUp();
-        spotifyArtistsService = new SpotifyArtistsService(server.url("").toString());
+        spotifyArtistsService = new SpotifyAlbumsService(server.url("").toString());
     }
 
     @After
