@@ -8,12 +8,11 @@ import java.util.List;
 
 import static java.util.stream.Collectors.toList;
 
-@Getter
 public class Playlist {
 
-    private String name;
-    private List<Track> tracks;
-    private int year;
+    @Getter private String name;
+    @Getter private List<Track> tracks;
+    @Getter private int year;
 
     private ProfileService profileService;
     private Albums albums;

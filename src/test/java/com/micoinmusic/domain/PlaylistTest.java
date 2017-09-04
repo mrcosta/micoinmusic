@@ -2,9 +2,9 @@ package com.micoinmusic.domain;
 
 import com.micoinmusic.spotify.SpotifyProfileService;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 
@@ -58,10 +58,13 @@ public class PlaylistTest {
     }
 
     @Test
-    @Ignore
-    public void shouldNotConsiderTheArtistsThatDoesntHaveAnyAlbums() throws Exception {
+    public void shouldCreateAnEmptyPlaylistIfUserDoesntHaveAnyFollowedArtists() throws Exception {
+        when(spotifyProfileService.getFollowedArtists(AUTH_TOKEN)).thenReturn(new ArrayList<>());
+
         Playlist createdPlaylist = playlist.createPlaylist("randomAuthToken");
-        assertThat(playlist.getName(), is("This 2018 in music"));
+
+        assertThat(createdPlaylist.getName(), is("This 2018 in music"));
+        assertThat(createdPlaylist.getTracks().size(), is(0));
     }
 
     private List<String> getPropertyList(List<Track> tracks, Function<Track, String> propertyToGet) {
