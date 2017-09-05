@@ -18,15 +18,19 @@ public class SpotifyAlbumsService implements AlbumsService {
     private static final String ARTISTS_ALBUNS = "v1/artists/<artistId>/albums?album_type=album&market=US&limit=50";
     private static final String ALBUMS = "v1/albums?ids=<albumsId>&market=US";
 
-    @Autowired
     private SpotifyJsonParser spotifyJsonParser;
 
-    @Autowired
     private SpotifyHttpClient spotifyHttpClient;
 
     public SpotifyAlbumsService(String baseUrl) {
         this.spotifyJsonParser = new SpotifyJsonParser();
         this.spotifyHttpClient = new SpotifyHttpClient(baseUrl);
+    }
+
+    @Autowired
+    public SpotifyAlbumsService(SpotifyJsonParser spotifyJsonParser, SpotifyHttpClient spotifyHttpClient) {
+        this.spotifyJsonParser = spotifyJsonParser;
+        this.spotifyHttpClient = spotifyHttpClient;
     }
 
     @Override

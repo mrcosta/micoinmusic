@@ -3,6 +3,7 @@ package com.micoinmusic.spotify;
 import com.google.gson.JsonParser;
 import com.micoinmusic.spotify.exceptions.SpotifyRequestException;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -16,6 +17,7 @@ import static com.google.common.net.HttpHeaders.AUTHORIZATION;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @AllArgsConstructor
+@NoArgsConstructor
 public class SpotifyHttpClient {
 
     public static final String API_BASE_URL = "https://api.spotify.com/";
