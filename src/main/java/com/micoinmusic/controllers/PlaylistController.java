@@ -28,7 +28,7 @@ public class PlaylistController {
     @POST
 	@RequestMapping("/playlists")
     public Playlist create(@NotNull @QueryParam("authToken") String authToken) {
-        logger.info("hello booter");
+        logger.info("creating playlist with the following authorization token: " + authToken);
         return playlistService.create(authToken);
     }
 }
