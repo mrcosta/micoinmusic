@@ -1,6 +1,7 @@
 package com.micoinmusic.spotify;
 
 import com.micoinmusic.domain.Album;
+import com.micoinmusic.spotify.parsers.SpotifyJsonParser;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -21,7 +22,7 @@ public class SpotifyAlbumsServiceTest extends HttpBuildResponses {
     @Before
     public void setUp() throws Exception {
         super.setUp();
-        spotifyArtistsService = new SpotifyAlbumsService(server.url("").toString());
+        spotifyArtistsService = new SpotifyAlbumsService(new SpotifyJsonParser(), new SpotifyHttpClient(server.url("").toString()));
     }
 
     @After

@@ -15,11 +15,12 @@ import java.nio.file.Paths;
 public abstract class HttpBuildResponses {
 
     protected MockWebServer server;
+    private int DEFAULT_PORT = 4040;
 
     @Before
     public void setUp() throws Exception {
         server = new MockWebServer();
-        server.start();
+        server.start(DEFAULT_PORT);
     }
 
     @After

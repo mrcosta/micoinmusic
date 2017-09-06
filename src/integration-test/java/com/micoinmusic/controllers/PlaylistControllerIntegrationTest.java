@@ -18,7 +18,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-public class UserControllerIntegrationTest {
+public class PlaylistControllerIntegrationTest {
 
     @Autowired
     private MockMvc mvc;

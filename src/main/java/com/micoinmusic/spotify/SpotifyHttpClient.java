@@ -2,11 +2,10 @@ package com.micoinmusic.spotify;
 
 import com.google.gson.JsonParser;
 import com.micoinmusic.spotify.exceptions.SpotifyRequestException;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.client.HttpServerErrorException;
 
@@ -16,13 +15,13 @@ import static com.google.common.net.HttpHeaders.ACCEPT;
 import static com.google.common.net.HttpHeaders.AUTHORIZATION;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
-@AllArgsConstructor
-@NoArgsConstructor
 public class SpotifyHttpClient {
 
-    public static final String API_BASE_URL = "https://api.spotify.com/";
+    private String baseUrl;
 
-    private String baseUrl = API_BASE_URL;
+    public SpotifyHttpClient(@Value("${spotify.base_url}") String baseUrl) {
+        this.baseUrl = baseUrl;
+    }
 
     public String doCall(String endpoint, String oauthToken) {
         OkHttpClient client = new OkHttpClient();
