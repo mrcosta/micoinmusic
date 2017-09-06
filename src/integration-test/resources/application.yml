@@ -10,4 +10,4 @@ server:
   port: ${PORT:8080}
 
 spotify:
-  base_url: http://localhost:4040
+  base_url: http://localhost:4040/

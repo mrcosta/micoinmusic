@@ -2,6 +2,7 @@ package com.micoinmusic.spotify.parsers;
 
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
+import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Type;
 import java.time.LocalDate;
@@ -10,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 
+@Component
 public class SpotifyJsonParser {
 
     private Gson gson;

@@ -2,12 +2,15 @@ package com.micoinmusic.domain;
 
 import com.micoinmusic.domain.dependencies.ProfileService;
 import lombok.Getter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.util.List;
 
 import static java.util.stream.Collectors.toList;
 
+@Component
 public class Playlist {
 
     private static final int MAX_TRACKS = 4;
@@ -19,15 +22,16 @@ public class Playlist {
     private ProfileService profileService;
     private Albums albums;
 
+    @Autowired
+    public Playlist(ProfileService profileService, Albums albums) {
+        this.profileService = profileService;
+        this.albums = albums;
+    }
+
     public Playlist(String name, List<Track> tracks, int year) {
         this.name = name;
         this.tracks = tracks;
         this.year = year;
-    }
-
-    public Playlist(ProfileService profileService, Albums albums) {
-        this.profileService = profileService;
-        this.albums = albums;
     }
 
     public Playlist createPlaylist(String authToken) {

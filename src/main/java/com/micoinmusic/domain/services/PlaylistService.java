@@ -4,10 +4,10 @@ import com.micoinmusic.domain.Playlist;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
 /* TODO: here I created as a class, but the ideal to use in the controller, following the patterns of Hexagonal,
     would be creating an interface to be used in the PlaylistController
  */
+@Service
 public class PlaylistService {
 
     private Playlist playlist;

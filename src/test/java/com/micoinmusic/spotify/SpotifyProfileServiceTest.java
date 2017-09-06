@@ -2,6 +2,7 @@ package com.micoinmusic.spotify;
 
 import com.micoinmusic.domain.Artist;
 import com.micoinmusic.spotify.exceptions.SpotifyRequestException;
+import com.micoinmusic.spotify.parsers.SpotifyJsonParser;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.SocketPolicy;
 import org.junit.Before;
@@ -28,7 +29,7 @@ public class SpotifyProfileServiceTest extends HttpBuildResponses {
     @Before
     public void setUp() throws Exception {
         super.setUp();
-        profileService = new SpotifyProfileService(server.url("").toString());
+        profileService = new SpotifyProfileService(new SpotifyJsonParser(), new SpotifyHttpClient(server.url("").toString()));
     }
 
     @Test

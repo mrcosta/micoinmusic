@@ -4,6 +4,7 @@ import com.google.gson.*;
 import com.micoinmusic.domain.Artist;
 import com.micoinmusic.domain.dependencies.ProfileService;
 import com.micoinmusic.spotify.parsers.SpotifyJsonParser;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -19,9 +20,10 @@ public class SpotifyProfileService implements ProfileService {
     private SpotifyJsonParser spotifyJsonParser;
     private SpotifyHttpClient spotifyHttpClient;
 
-    public SpotifyProfileService(String baseUrl) {
-        this.spotifyJsonParser = new SpotifyJsonParser();
-        this.spotifyHttpClient = new SpotifyHttpClient(baseUrl);
+    @Autowired
+    public SpotifyProfileService(SpotifyJsonParser spotifyJsonParser, SpotifyHttpClient spotifyHttpClient) {
+        this.spotifyJsonParser = spotifyJsonParser;
+        this.spotifyHttpClient = spotifyHttpClient;
     }
 
     @Override

@@ -7,6 +7,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.HttpServerErrorException;
 
 import java.io.IOException;
@@ -15,6 +16,7 @@ import static com.google.common.net.HttpHeaders.ACCEPT;
 import static com.google.common.net.HttpHeaders.AUTHORIZATION;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
+@Component
 public class SpotifyHttpClient {
 
     private String baseUrl;
@@ -24,6 +26,7 @@ public class SpotifyHttpClient {
     }
 
     public String doCall(String endpoint, String oauthToken) {
+        System.out.println("THE URL" + baseUrl);
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
                 .addHeader(ACCEPT, APPLICATION_JSON_VALUE)

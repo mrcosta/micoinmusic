@@ -6,18 +6,19 @@ import com.micoinmusic.domain.Album;
 import com.micoinmusic.domain.dependencies.AlbumsService;
 import com.micoinmusic.spotify.parsers.SpotifyJsonParser;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+@Service
 public class SpotifyAlbumsService implements AlbumsService {
 
     private static final String ARTISTS_ALBUNS = "v1/artists/<artistId>/albums?album_type=album&market=US&limit=50";
     private static final String ALBUMS = "v1/albums?ids=<albumsId>&market=US";
 
     private SpotifyJsonParser spotifyJsonParser;
-
     private SpotifyHttpClient spotifyHttpClient;
 
     @Autowired
