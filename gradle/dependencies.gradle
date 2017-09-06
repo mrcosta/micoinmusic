@@ -1,6 +1,8 @@
 dependencies {
     compile 'com.google.guava:guava:21.0'
-    compile 'org.springframework.boot:spring-boot-starter-web:1.5.4.RELEASE'
+    compile ('org.springframework.boot:spring-boot-starter-web:1.5.4.RELEASE') {
+        exclude module: 'logback-classic'
+    }
     compile 'org.projectlombok:lombok:1.16.16'
     compile 'com.squareup.okhttp3:okhttp:3.8.1'
     compile 'com.google.code.gson:gson:2.8.1'
