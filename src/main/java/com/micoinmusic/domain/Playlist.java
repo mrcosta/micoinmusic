@@ -10,6 +10,8 @@ import static java.util.stream.Collectors.toList;
 
 public class Playlist {
 
+    private static final int MAX_TRACKS = 4;
+
     @Getter private String name;
     @Getter private List<Track> tracks;
     @Getter private int year;
@@ -31,7 +33,7 @@ public class Playlist {
     public Playlist createPlaylist(String authToken) {
         List<Artist> artists = profileService.getFollowedArtists(authToken);
         List<Album> currentYearAlbums = artists.stream().map(artist -> albums.getArtistAlbumFromCurrentYear(authToken, artist.getId())).filter(album -> album != null).collect(toList());
-        List<Track>  tracks = currentYearAlbums.stream().flatMap(album -> album.getTracks().getItems().stream()).collect(toList());
+        List<Track>  tracks = currentYearAlbums.stream().flatMap(album -> album.getTracks().getItems().stream().limit(MAX_TRACKS)).collect(toList());
 
         return new Playlist("This 2018 in music", tracks, LocalDate.now().getYear());
     }

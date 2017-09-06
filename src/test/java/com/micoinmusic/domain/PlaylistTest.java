@@ -58,6 +58,26 @@ public class PlaylistTest {
     }
 
     @Test
+    public void shouldCreatePlaylistForTheGivenYearGettingOnlyTheFirst4TracksOfAnAlbum() throws Exception {
+        when(spotifyProfileService.getFollowedArtists(AUTH_TOKEN)).thenReturn(asList(new Artist("Lorde", "1")));
+
+        Tracks melodramaTracks = new Tracks(asList(new Track("Green Light", "id1", "Lorde", "Melodrama"),
+                new Track("Sober", "id2", "Lorde", "Melodrama"),
+                new Track("Homemade Dynamite", "id3", "Lorde", "Melodrama"),
+                new Track("The Louvre", "id4", "Lorde", "Melodrama"),
+                new Track("Liability", "id5", "Lorde", "Melodrama")
+        ));
+        when(albums.getArtistAlbumFromCurrentYear(AUTH_TOKEN, "1")).thenReturn(new Album("Melodrama", melodramaTracks));
+
+        Playlist createdPlaylist = playlist.createPlaylist(AUTH_TOKEN);
+        List<String> names = getPropertyList(createdPlaylist.getTracks(), Track::getName);
+
+        assertThat(createdPlaylist.getName(), is("This 2018 in music"));
+        assertThat(createdPlaylist.getTracks().size(), is(4));
+        assertThat(names, is(asList("Green Light", "Sober", "Homemade Dynamite", "The Louvre")));
+    }
+
+    @Test
     public void shouldCreateAnEmptyPlaylistIfUserDoesntHaveAnyFollowedArtists() throws Exception {
         when(spotifyProfileService.getFollowedArtists(AUTH_TOKEN)).thenReturn(new ArrayList<>());
 
