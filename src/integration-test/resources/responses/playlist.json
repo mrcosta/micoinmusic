@@ -2,11 +2,9 @@
   "name": "This 2018 in music",
   "year": 2018,
   "tracks": [
-    {
-      "name": "Love", "artist": "Lana Del Rey", "album": "Lust For Life",
-      "name": "Lust For Life (with The Weekend)", "artist": "Lana Del Rey", "album": "Lust For Life",
-      "name": "13 Beaches", "artist": "Lana Del Rey", "album": "Lust For Life",
-      "name": "Cherry", "artist": "Lana Del Rey", "album": "Lust For Life"
-    }
+    {"name": "Love", "artist": "Lana Del Rey", "album": "Lust For Life"},
+    {"name": "Lust For Life (with The Weekend)", "artist": "Lana Del Rey", "album": "Lust For Life"},
+    {"name": "13 Beaches", "artist": "Lana Del Rey", "album": "Lust For Life"},
+    {"name": "Cherry", "artist": "Lana Del Rey", "album": "Lust For Life"}
   ]
 }

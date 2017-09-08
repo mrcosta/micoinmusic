@@ -3,12 +3,12 @@ package com.micoinmusic.controllers;
 import com.micoinmusic.domain.Playlist;
 import com.micoinmusic.domain.Track;
 import com.micoinmusic.domain.services.PlaylistService;
-import org.junit.*;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
 import org.springframework.boot.test.rule.OutputCapture;
 
 import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.List;
 
 import static java.util.Arrays.asList;
 import static org.hamcrest.CoreMatchers.containsString;
