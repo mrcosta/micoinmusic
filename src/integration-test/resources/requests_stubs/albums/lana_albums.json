@@ -1,0 +1,349 @@
+{
+  "href" : "https://api.spotify.com/v1/artists/00FQb4jTyendYWaN8pK0wa/albums?offset=0&limit=50&album_type=album&market=US",
+  "items" : [ {
+    "album_type" : "album",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/00FQb4jTyendYWaN8pK0wa"
+      },
+      "href" : "https://api.spotify.com/v1/artists/00FQb4jTyendYWaN8pK0wa",
+      "id" : "00FQb4jTyendYWaN8pK0wa",
+      "name" : "Lana Del Rey",
+      "type" : "artist",
+      "uri" : "spotify:artist:00FQb4jTyendYWaN8pK0wa"
+    } ],
+    "available_markets" : [ ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/7xYiTrbTL57QO0bb4hXIKo"
+    },
+    "href" : "https://api.spotify.com/v1/albums/7xYiTrbTL57QO0bb4hXIKo",
+    "id" : "7xYiTrbTL57QO0bb4hXIKo",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/4f0658d1972c394b54223b7a9309f3500f3e907b",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/23db0fdc9e4d6971006ea723b269b7a99aa12435",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/e4928937a2986dd804fb0d591eb33c2b08593692",
+      "width" : 64
+    } ],
+    "name" : "Lust For Life",
+    "type" : "album",
+    "uri" : "spotify:album:7xYiTrbTL57QO0bb4hXIKo"
+  }, {
+    "album_type" : "album",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/00FQb4jTyendYWaN8pK0wa"
+      },
+      "href" : "https://api.spotify.com/v1/artists/00FQb4jTyendYWaN8pK0wa",
+      "id" : "00FQb4jTyendYWaN8pK0wa",
+      "name" : "Lana Del Rey",
+      "type" : "artist",
+      "uri" : "spotify:artist:00FQb4jTyendYWaN8pK0wa"
+    } ],
+    "available_markets" : [ ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/2DpEBrjCur1ythIZ10gJWw"
+    },
+    "href" : "https://api.spotify.com/v1/albums/2DpEBrjCur1ythIZ10gJWw",
+    "id" : "2DpEBrjCur1ythIZ10gJWw",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/c102391dd44b9795771be5743fa5af784f364c0f",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/71dcd86f15f31ba141cb7592068f8a9e925fb10c",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/d9877876221c2db62e3ca7a6bbefc6dc93df00fa",
+      "width" : 64
+    } ],
+    "name" : "Honeymoon",
+    "type" : "album",
+    "uri" : "spotify:album:2DpEBrjCur1ythIZ10gJWw"
+  }, {
+    "album_type" : "album",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/00FQb4jTyendYWaN8pK0wa"
+      },
+      "href" : "https://api.spotify.com/v1/artists/00FQb4jTyendYWaN8pK0wa",
+      "id" : "00FQb4jTyendYWaN8pK0wa",
+      "name" : "Lana Del Rey",
+      "type" : "artist",
+      "uri" : "spotify:artist:00FQb4jTyendYWaN8pK0wa"
+    } ],
+    "available_markets" : [ ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/2e3doCyb0qn2JeKLsh2Xbo"
+    },
+    "href" : "https://api.spotify.com/v1/albums/2e3doCyb0qn2JeKLsh2Xbo",
+    "id" : "2e3doCyb0qn2JeKLsh2Xbo",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/c73c323012d742df6b99408b1593486f4a25534f",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/4f3c4840b1424d230087c8b8936c389b4fee675a",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/ccd0b17aad98f4cc1f4f48e5f04ae8a93b0d77bb",
+      "width" : 64
+    } ],
+    "name" : "Ultraviolence",
+    "type" : "album",
+    "uri" : "spotify:album:2e3doCyb0qn2JeKLsh2Xbo"
+  }, {
+    "album_type" : "album",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/00FQb4jTyendYWaN8pK0wa"
+      },
+      "href" : "https://api.spotify.com/v1/artists/00FQb4jTyendYWaN8pK0wa",
+      "id" : "00FQb4jTyendYWaN8pK0wa",
+      "name" : "Lana Del Rey",
+      "type" : "artist",
+      "uri" : "spotify:artist:00FQb4jTyendYWaN8pK0wa"
+    } ],
+    "available_markets" : [ ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/1ORxRsK3MrSLvh7VQTF01F"
+    },
+    "href" : "https://api.spotify.com/v1/albums/1ORxRsK3MrSLvh7VQTF01F",
+    "id" : "1ORxRsK3MrSLvh7VQTF01F",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/030edb1aa77b0197e75ec1e70d0c643abd96b2ad",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/7eca0611a1b3280114688f2187b20d2cb5a6a504",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/2a842650db3cb88b8cc3251f1d08ea79719f9ea3",
+      "width" : 64
+    } ],
+    "name" : "Ultraviolence (Deluxe)",
+    "type" : "album",
+    "uri" : "spotify:album:1ORxRsK3MrSLvh7VQTF01F"
+  }, {
+    "album_type" : "album",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/00FQb4jTyendYWaN8pK0wa"
+      },
+      "href" : "https://api.spotify.com/v1/artists/00FQb4jTyendYWaN8pK0wa",
+      "id" : "00FQb4jTyendYWaN8pK0wa",
+      "name" : "Lana Del Rey",
+      "type" : "artist",
+      "uri" : "spotify:artist:00FQb4jTyendYWaN8pK0wa"
+    } ],
+    "available_markets" : [ ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/5PW8nAtvf2HV8RYZFd4IrX"
+    },
+    "href" : "https://api.spotify.com/v1/albums/5PW8nAtvf2HV8RYZFd4IrX",
+    "id" : "5PW8nAtvf2HV8RYZFd4IrX",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/8d94671b235deefae167c13dd658e8f0ea1d2402",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/34d220e676923f06dcb162cf568a50310fa0dcd5",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/b67a06f05e6db28386b3e793e7f9ccabc6c64db9",
+      "width" : 64
+    } ],
+    "name" : "Born To Die - The Paradise Edition",
+    "type" : "album",
+    "uri" : "spotify:album:5PW8nAtvf2HV8RYZFd4IrX"
+  }, {
+    "album_type" : "album",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/00FQb4jTyendYWaN8pK0wa"
+      },
+      "href" : "https://api.spotify.com/v1/artists/00FQb4jTyendYWaN8pK0wa",
+      "id" : "00FQb4jTyendYWaN8pK0wa",
+      "name" : "Lana Del Rey",
+      "type" : "artist",
+      "uri" : "spotify:artist:00FQb4jTyendYWaN8pK0wa"
+    } ],
+    "available_markets" : [ ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/4X8hAqIWpQyQks2yRhyqs4"
+    },
+    "href" : "https://api.spotify.com/v1/albums/4X8hAqIWpQyQks2yRhyqs4",
+    "id" : "4X8hAqIWpQyQks2yRhyqs4",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/17d5cbeba72fefc739978d5630d1344838e2f7b3",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/c89845e2d8c49930379b8f6ad86d64da34d7cdac",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/26312ec4ba390abe0601205d426fa9695c9c933c",
+      "width" : 64
+    } ],
+    "name" : "Born To Die",
+    "type" : "album",
+    "uri" : "spotify:album:4X8hAqIWpQyQks2yRhyqs4"
+  }, {
+    "album_type" : "album",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/00FQb4jTyendYWaN8pK0wa"
+      },
+      "href" : "https://api.spotify.com/v1/artists/00FQb4jTyendYWaN8pK0wa",
+      "id" : "00FQb4jTyendYWaN8pK0wa",
+      "name" : "Lana Del Rey",
+      "type" : "artist",
+      "uri" : "spotify:artist:00FQb4jTyendYWaN8pK0wa"
+    } ],
+    "available_markets" : [ ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/4vXt6IpMcSnqonljffWlMI"
+    },
+    "href" : "https://api.spotify.com/v1/albums/4vXt6IpMcSnqonljffWlMI",
+    "id" : "4vXt6IpMcSnqonljffWlMI",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/17d5cbeba72fefc739978d5630d1344838e2f7b3",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/c89845e2d8c49930379b8f6ad86d64da34d7cdac",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/26312ec4ba390abe0601205d426fa9695c9c933c",
+      "width" : 64
+    } ],
+    "name" : "Born To Die",
+    "type" : "album",
+    "uri" : "spotify:album:4vXt6IpMcSnqonljffWlMI"
+  }, {
+    "album_type" : "album",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/00FQb4jTyendYWaN8pK0wa"
+      },
+      "href" : "https://api.spotify.com/v1/artists/00FQb4jTyendYWaN8pK0wa",
+      "id" : "00FQb4jTyendYWaN8pK0wa",
+      "name" : "Lana Del Rey",
+      "type" : "artist",
+      "uri" : "spotify:artist:00FQb4jTyendYWaN8pK0wa"
+    } ],
+    "available_markets" : [ ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/5IjSLZhlg0qVq62r2PSfM1"
+    },
+    "href" : "https://api.spotify.com/v1/albums/5IjSLZhlg0qVq62r2PSfM1",
+    "id" : "5IjSLZhlg0qVq62r2PSfM1",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/17d5cbeba72fefc739978d5630d1344838e2f7b3",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/c89845e2d8c49930379b8f6ad86d64da34d7cdac",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/26312ec4ba390abe0601205d426fa9695c9c933c",
+      "width" : 64
+    } ],
+    "name" : "Born To Die",
+    "type" : "album",
+    "uri" : "spotify:album:5IjSLZhlg0qVq62r2PSfM1"
+  }, {
+    "album_type" : "album",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/00FQb4jTyendYWaN8pK0wa"
+      },
+      "href" : "https://api.spotify.com/v1/artists/00FQb4jTyendYWaN8pK0wa",
+      "id" : "00FQb4jTyendYWaN8pK0wa",
+      "name" : "Lana Del Rey",
+      "type" : "artist",
+      "uri" : "spotify:artist:00FQb4jTyendYWaN8pK0wa"
+    } ],
+    "available_markets" : [ ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/3TtsWmvFbChKTWIRfa85lS"
+    },
+    "href" : "https://api.spotify.com/v1/albums/3TtsWmvFbChKTWIRfa85lS",
+    "id" : "3TtsWmvFbChKTWIRfa85lS",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/d7eac02bf094c8f6b7aa6d59fbccbca391a41a71",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/fbdc2dc4b36819dc0a3c27c9281f0b7bd5c74a6f",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/41bd4e31a08868553388599bd7b3bef4003b49fb",
+      "width" : 64
+    } ],
+    "name" : "Born To Die (Bonus Track Version)",
+    "type" : "album",
+    "uri" : "spotify:album:3TtsWmvFbChKTWIRfa85lS"
+  }, {
+    "album_type" : "album",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/00FQb4jTyendYWaN8pK0wa"
+      },
+      "href" : "https://api.spotify.com/v1/artists/00FQb4jTyendYWaN8pK0wa",
+      "id" : "00FQb4jTyendYWaN8pK0wa",
+      "name" : "Lana Del Rey",
+      "type" : "artist",
+      "uri" : "spotify:artist:00FQb4jTyendYWaN8pK0wa"
+    } ],
+    "available_markets" : [ ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/1JnjcAIKQ9TSJFVFierTB8"
+    },
+    "href" : "https://api.spotify.com/v1/albums/1JnjcAIKQ9TSJFVFierTB8",
+    "id" : "1JnjcAIKQ9TSJFVFierTB8",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/fe97d902eef9bc38d3c86c7a7a93ffd98d1e933f",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/9f6891ee0501ecd1b95386dce21c20ea5983384d",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/9a7c11b822c46f51d958e5750c96ad26d550994f",
+      "width" : 64
+    } ],
+    "name" : "Paradise",
+    "type" : "album",
+    "uri" : "spotify:album:1JnjcAIKQ9TSJFVFierTB8"
+  } ],
+  "limit" : 50,
+  "next" : null,
+  "offset" : 0,
+  "previous" : null,
+  "total" : 10
+}

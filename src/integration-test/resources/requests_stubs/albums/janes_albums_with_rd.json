@@ -1,0 +1,739 @@
+{
+  "albums" : [ {
+    "album_type" : "album",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/02NfyD6AlLA12crYzw5YcR"
+      },
+      "href" : "https://api.spotify.com/v1/artists/02NfyD6AlLA12crYzw5YcR",
+      "id" : "02NfyD6AlLA12crYzw5YcR",
+      "name" : "Jane's Addiction",
+      "type" : "artist",
+      "uri" : "spotify:artist:02NfyD6AlLA12crYzw5YcR"
+    } ],
+    "copyrights" : [ {
+      "text" : "(C) 2017 Cleopatra Records",
+      "type" : "C"
+    } ],
+    "external_ids" : {
+      "upc" : "889466059766"
+    },
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/6XQRLJZqxADFmJYbDUOpGN"
+    },
+    "genres" : [ ],
+    "href" : "https://api.spotify.com/v1/albums/6XQRLJZqxADFmJYbDUOpGN",
+    "id" : "6XQRLJZqxADFmJYbDUOpGN",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/9b472558bc41878068fe133de729bfafb68a24db",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/cb991ddb8834c39cb427c8aa751b980d0c511b95",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/455f3c3dd431b70a4ee0517ac96d5e39bc9500f2",
+      "width" : 64
+    } ],
+    "label" : "Cleopatra Records",
+    "name" : "Alive at Twenty-Five - Ritual De Lo Habitual Live",
+    "popularity" : 37,
+    "release_date" : "2017-08-04",
+    "release_date_precision" : "day",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/albums/6XQRLJZqxADFmJYbDUOpGN/tracks?offset=0&limit=50&market=US",
+      "items" : [ {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/02NfyD6AlLA12crYzw5YcR"
+          },
+          "href" : "https://api.spotify.com/v1/artists/02NfyD6AlLA12crYzw5YcR",
+          "id" : "02NfyD6AlLA12crYzw5YcR",
+          "name" : "Jane's Addiction",
+          "type" : "artist",
+          "uri" : "spotify:artist:02NfyD6AlLA12crYzw5YcR"
+        } ],
+        "disc_number" : 1,
+        "duration_ms" : 258000,
+        "explicit" : false,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/3xjVlHPDcnRSwm56sqnzug"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/3xjVlHPDcnRSwm56sqnzug",
+        "id" : "3xjVlHPDcnRSwm56sqnzug",
+        "is_playable" : true,
+        "name" : "Stop! - Live",
+        "preview_url" : "https://p.scdn.co/mp3-preview/ced1a6bcf701b5a8497f13eadebe41d4334a59fc?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 1,
+        "type" : "track",
+        "uri" : "spotify:track:3xjVlHPDcnRSwm56sqnzug"
+      }, {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/02NfyD6AlLA12crYzw5YcR"
+          },
+          "href" : "https://api.spotify.com/v1/artists/02NfyD6AlLA12crYzw5YcR",
+          "id" : "02NfyD6AlLA12crYzw5YcR",
+          "name" : "Jane's Addiction",
+          "type" : "artist",
+          "uri" : "spotify:artist:02NfyD6AlLA12crYzw5YcR"
+        } ],
+        "disc_number" : 1,
+        "duration_ms" : 204381,
+        "explicit" : false,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/1951DssGw0AlEFPmbBxQGe"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/1951DssGw0AlEFPmbBxQGe",
+        "id" : "1951DssGw0AlEFPmbBxQGe",
+        "is_playable" : true,
+        "name" : "No One's Leaving - Live",
+        "preview_url" : "https://p.scdn.co/mp3-preview/810e47d41fea6e4c8a508fe61de2c026381df972?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 2,
+        "type" : "track",
+        "uri" : "spotify:track:1951DssGw0AlEFPmbBxQGe"
+      }, {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/02NfyD6AlLA12crYzw5YcR"
+          },
+          "href" : "https://api.spotify.com/v1/artists/02NfyD6AlLA12crYzw5YcR",
+          "id" : "02NfyD6AlLA12crYzw5YcR",
+          "name" : "Jane's Addiction",
+          "type" : "artist",
+          "uri" : "spotify:artist:02NfyD6AlLA12crYzw5YcR"
+        } ],
+        "disc_number" : 1,
+        "duration_ms" : 169118,
+        "explicit" : true,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/1GOAMd2k5jLCuGkC2KA7de"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/1GOAMd2k5jLCuGkC2KA7de",
+        "id" : "1GOAMd2k5jLCuGkC2KA7de",
+        "is_playable" : true,
+        "name" : "Ain't No Right - Live",
+        "preview_url" : "https://p.scdn.co/mp3-preview/e7846588e0276e4af8c6d593f94443b9cc9c0572?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 3,
+        "type" : "track",
+        "uri" : "spotify:track:1GOAMd2k5jLCuGkC2KA7de"
+      }, {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/02NfyD6AlLA12crYzw5YcR"
+          },
+          "href" : "https://api.spotify.com/v1/artists/02NfyD6AlLA12crYzw5YcR",
+          "id" : "02NfyD6AlLA12crYzw5YcR",
+          "name" : "Jane's Addiction",
+          "type" : "artist",
+          "uri" : "spotify:artist:02NfyD6AlLA12crYzw5YcR"
+        } ],
+        "disc_number" : 1,
+        "duration_ms" : 350453,
+        "explicit" : false,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/49KOdtisc2d4rH4hL1NIPS"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/49KOdtisc2d4rH4hL1NIPS",
+        "id" : "49KOdtisc2d4rH4hL1NIPS",
+        "is_playable" : true,
+        "name" : "Obvious - Live",
+        "preview_url" : "https://p.scdn.co/mp3-preview/7bfd36378b88755457676cab1476b55e4841f08c?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 4,
+        "type" : "track",
+        "uri" : "spotify:track:49KOdtisc2d4rH4hL1NIPS"
+      }, {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/02NfyD6AlLA12crYzw5YcR"
+          },
+          "href" : "https://api.spotify.com/v1/artists/02NfyD6AlLA12crYzw5YcR",
+          "id" : "02NfyD6AlLA12crYzw5YcR",
+          "name" : "Jane's Addiction",
+          "type" : "artist",
+          "uri" : "spotify:artist:02NfyD6AlLA12crYzw5YcR"
+        } ],
+        "disc_number" : 1,
+        "duration_ms" : 246344,
+        "explicit" : false,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/1oJPF0eaExwbGpYSc2kVQU"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/1oJPF0eaExwbGpYSc2kVQU",
+        "id" : "1oJPF0eaExwbGpYSc2kVQU",
+        "is_playable" : true,
+        "name" : "Been Caught Stealing - Live",
+        "preview_url" : "https://p.scdn.co/mp3-preview/7e2adf13e5f5f3c052ecceb3b6957bf14e099ed8?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 5,
+        "type" : "track",
+        "uri" : "spotify:track:1oJPF0eaExwbGpYSc2kVQU"
+      }, {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/02NfyD6AlLA12crYzw5YcR"
+          },
+          "href" : "https://api.spotify.com/v1/artists/02NfyD6AlLA12crYzw5YcR",
+          "id" : "02NfyD6AlLA12crYzw5YcR",
+          "name" : "Jane's Addiction",
+          "type" : "artist",
+          "uri" : "spotify:artist:02NfyD6AlLA12crYzw5YcR"
+        } ],
+        "disc_number" : 1,
+        "duration_ms" : 683088,
+        "explicit" : false,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/5AQGcMLDDxxTUhgD7aqVzb"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/5AQGcMLDDxxTUhgD7aqVzb",
+        "id" : "5AQGcMLDDxxTUhgD7aqVzb",
+        "is_playable" : true,
+        "name" : "Three Days - Live",
+        "preview_url" : "https://p.scdn.co/mp3-preview/6859992565a21cbbd13b5d92e05d240b36698135?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 6,
+        "type" : "track",
+        "uri" : "spotify:track:5AQGcMLDDxxTUhgD7aqVzb"
+      }, {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/02NfyD6AlLA12crYzw5YcR"
+          },
+          "href" : "https://api.spotify.com/v1/artists/02NfyD6AlLA12crYzw5YcR",
+          "id" : "02NfyD6AlLA12crYzw5YcR",
+          "name" : "Jane's Addiction",
+          "type" : "artist",
+          "uri" : "spotify:artist:02NfyD6AlLA12crYzw5YcR"
+        } ],
+        "disc_number" : 1,
+        "duration_ms" : 519879,
+        "explicit" : false,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/7v0kA9iV7hJyQDTMBkbojr"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/7v0kA9iV7hJyQDTMBkbojr",
+        "id" : "7v0kA9iV7hJyQDTMBkbojr",
+        "is_playable" : true,
+        "name" : "Then She Did... - Live",
+        "preview_url" : "https://p.scdn.co/mp3-preview/648fcdadbe83e174216711bce9fa59299578c7e6?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 7,
+        "type" : "track",
+        "uri" : "spotify:track:7v0kA9iV7hJyQDTMBkbojr"
+      }, {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/02NfyD6AlLA12crYzw5YcR"
+          },
+          "href" : "https://api.spotify.com/v1/artists/02NfyD6AlLA12crYzw5YcR",
+          "id" : "02NfyD6AlLA12crYzw5YcR",
+          "name" : "Jane's Addiction",
+          "type" : "artist",
+          "uri" : "spotify:artist:02NfyD6AlLA12crYzw5YcR"
+        } ],
+        "disc_number" : 1,
+        "duration_ms" : 331928,
+        "explicit" : false,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/2cat5jWLw4J4uASTAznex1"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/2cat5jWLw4J4uASTAznex1",
+        "id" : "2cat5jWLw4J4uASTAznex1",
+        "is_playable" : true,
+        "name" : "Of Course - Live",
+        "preview_url" : "https://p.scdn.co/mp3-preview/78f4a92825412399200dfd9ec5ee504a21ed3ed5?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 8,
+        "type" : "track",
+        "uri" : "spotify:track:2cat5jWLw4J4uASTAznex1"
+      }, {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/02NfyD6AlLA12crYzw5YcR"
+          },
+          "href" : "https://api.spotify.com/v1/artists/02NfyD6AlLA12crYzw5YcR",
+          "id" : "02NfyD6AlLA12crYzw5YcR",
+          "name" : "Jane's Addiction",
+          "type" : "artist",
+          "uri" : "spotify:artist:02NfyD6AlLA12crYzw5YcR"
+        } ],
+        "disc_number" : 1,
+        "duration_ms" : 314393,
+        "explicit" : false,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/160RLCKr1MPzKvMteq4fdT"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/160RLCKr1MPzKvMteq4fdT",
+        "id" : "160RLCKr1MPzKvMteq4fdT",
+        "is_playable" : true,
+        "name" : "Classic Girl - Live",
+        "preview_url" : "https://p.scdn.co/mp3-preview/6e518ce50fe8fb75f16e40a27876aae2716235fe?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 9,
+        "type" : "track",
+        "uri" : "spotify:track:160RLCKr1MPzKvMteq4fdT"
+      }, {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/02NfyD6AlLA12crYzw5YcR"
+          },
+          "href" : "https://api.spotify.com/v1/artists/02NfyD6AlLA12crYzw5YcR",
+          "id" : "02NfyD6AlLA12crYzw5YcR",
+          "name" : "Jane's Addiction",
+          "type" : "artist",
+          "uri" : "spotify:artist:02NfyD6AlLA12crYzw5YcR"
+        } ],
+        "disc_number" : 1,
+        "duration_ms" : 252799,
+        "explicit" : false,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/6t5Qi4bucQqXgzMRwyj48z"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/6t5Qi4bucQqXgzMRwyj48z",
+        "id" : "6t5Qi4bucQqXgzMRwyj48z",
+        "is_playable" : true,
+        "name" : "Mountain Song - Live",
+        "preview_url" : "https://p.scdn.co/mp3-preview/5deb901bad4c36aa9e32fbe92f7b34efcbdfc1a2?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 10,
+        "type" : "track",
+        "uri" : "spotify:track:6t5Qi4bucQqXgzMRwyj48z"
+      }, {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/02NfyD6AlLA12crYzw5YcR"
+          },
+          "href" : "https://api.spotify.com/v1/artists/02NfyD6AlLA12crYzw5YcR",
+          "id" : "02NfyD6AlLA12crYzw5YcR",
+          "name" : "Jane's Addiction",
+          "type" : "artist",
+          "uri" : "spotify:artist:02NfyD6AlLA12crYzw5YcR"
+        } ],
+        "disc_number" : 1,
+        "duration_ms" : 235673,
+        "explicit" : false,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/4Ly3cwSnYB9jUvpomNQ5Y8"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/4Ly3cwSnYB9jUvpomNQ5Y8",
+        "id" : "4Ly3cwSnYB9jUvpomNQ5Y8",
+        "is_playable" : true,
+        "name" : "Just Because - Live",
+        "preview_url" : "https://p.scdn.co/mp3-preview/0c3483c8fa4854de6a7da1a3cb8abbbc4bf879c1?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 11,
+        "type" : "track",
+        "uri" : "spotify:track:4Ly3cwSnYB9jUvpomNQ5Y8"
+      }, {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/02NfyD6AlLA12crYzw5YcR"
+          },
+          "href" : "https://api.spotify.com/v1/artists/02NfyD6AlLA12crYzw5YcR",
+          "id" : "02NfyD6AlLA12crYzw5YcR",
+          "name" : "Jane's Addiction",
+          "type" : "artist",
+          "uri" : "spotify:artist:02NfyD6AlLA12crYzw5YcR"
+        } ],
+        "disc_number" : 1,
+        "duration_ms" : 422326,
+        "explicit" : false,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/3DBiZZDQNl7YaRUiHGSLw5"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/3DBiZZDQNl7YaRUiHGSLw5",
+        "id" : "3DBiZZDQNl7YaRUiHGSLw5",
+        "is_playable" : true,
+        "name" : "Ted, Just Admit It - Live",
+        "preview_url" : "https://p.scdn.co/mp3-preview/69d28eee614748882511b16d1d057e0a43058744?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 12,
+        "type" : "track",
+        "uri" : "spotify:track:3DBiZZDQNl7YaRUiHGSLw5"
+      }, {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/02NfyD6AlLA12crYzw5YcR"
+          },
+          "href" : "https://api.spotify.com/v1/artists/02NfyD6AlLA12crYzw5YcR",
+          "id" : "02NfyD6AlLA12crYzw5YcR",
+          "name" : "Jane's Addiction",
+          "type" : "artist",
+          "uri" : "spotify:artist:02NfyD6AlLA12crYzw5YcR"
+        } ],
+        "disc_number" : 1,
+        "duration_ms" : 384100,
+        "explicit" : false,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/4rjleddlbDZpy5TJW5I4xU"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/4rjleddlbDZpy5TJW5I4xU",
+        "id" : "4rjleddlbDZpy5TJW5I4xU",
+        "is_playable" : true,
+        "name" : "Jane Says - Live",
+        "preview_url" : "https://p.scdn.co/mp3-preview/7b0e99df7ca5574a0add7c7a34642917ca9168ca?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 13,
+        "type" : "track",
+        "uri" : "spotify:track:4rjleddlbDZpy5TJW5I4xU"
+      } ],
+      "limit" : 50,
+      "next" : null,
+      "offset" : 0,
+      "previous" : null,
+      "total" : 13
+    },
+    "type" : "album",
+    "uri" : "spotify:album:6XQRLJZqxADFmJYbDUOpGN"
+  }, {
+    "album_type" : "album",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/02NfyD6AlLA12crYzw5YcR"
+      },
+      "href" : "https://api.spotify.com/v1/artists/02NfyD6AlLA12crYzw5YcR",
+      "id" : "02NfyD6AlLA12crYzw5YcR",
+      "name" : "Jane's Addiction",
+      "type" : "artist",
+      "uri" : "spotify:artist:02NfyD6AlLA12crYzw5YcR"
+    } ],
+    "copyrights" : [ {
+      "text" : "© 2013 Universal Music Enterprises, a Division of UMG Recordings, Inc.",
+      "type" : "C"
+    }, {
+      "text" : "℗ 2013 Hypersonic, Inc. under exclusive license to Universal Music Enterprises, a division of UMG Recordings, Inc.",
+      "type" : "P"
+    } ],
+    "external_ids" : {
+      "upc" : "00602537402779"
+    },
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/6vh6Upe0uvW0K508yuvITl"
+    },
+    "genres" : [ ],
+    "href" : "https://api.spotify.com/v1/albums/6vh6Upe0uvW0K508yuvITl",
+    "id" : "6vh6Upe0uvW0K508yuvITl",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/0159601d5f76045c7ce1c738f2e784270bdf4e3a",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/a9ce62c566c884904ba95643ad3aae3b020dd7b5",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/5bbb5a789eadf68027bec8a04005217e5e5fc9b0",
+      "width" : 64
+    } ],
+    "label" : "Universal Music Group",
+    "name" : "Live In NYC",
+    "popularity" : 34,
+    "release_date" : "2013-01-01",
+    "release_date_precision" : "day",
+    "tracks" : {
+      "href" : "https://api.spotify.com/v1/albums/6vh6Upe0uvW0K508yuvITl/tracks?offset=0&limit=50&market=US",
+      "items" : [ {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/02NfyD6AlLA12crYzw5YcR"
+          },
+          "href" : "https://api.spotify.com/v1/artists/02NfyD6AlLA12crYzw5YcR",
+          "id" : "02NfyD6AlLA12crYzw5YcR",
+          "name" : "Jane's Addiction",
+          "type" : "artist",
+          "uri" : "spotify:artist:02NfyD6AlLA12crYzw5YcR"
+        } ],
+        "disc_number" : 1,
+        "duration_ms" : 242546,
+        "explicit" : true,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/7jW5gS11HrzmKWB3rKrJQR"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/7jW5gS11HrzmKWB3rKrJQR",
+        "id" : "7jW5gS11HrzmKWB3rKrJQR",
+        "is_playable" : true,
+        "name" : "Whores",
+        "preview_url" : "https://p.scdn.co/mp3-preview/4b3d86ab34461ea48df3b5167ad11d979aab06b4?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 1,
+        "type" : "track",
+        "uri" : "spotify:track:7jW5gS11HrzmKWB3rKrJQR"
+      }, {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/02NfyD6AlLA12crYzw5YcR"
+          },
+          "href" : "https://api.spotify.com/v1/artists/02NfyD6AlLA12crYzw5YcR",
+          "id" : "02NfyD6AlLA12crYzw5YcR",
+          "name" : "Jane's Addiction",
+          "type" : "artist",
+          "uri" : "spotify:artist:02NfyD6AlLA12crYzw5YcR"
+        } ],
+        "disc_number" : 1,
+        "duration_ms" : 189853,
+        "explicit" : true,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/0Kb8Ywsf728cqksYOfVHcG"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/0Kb8Ywsf728cqksYOfVHcG",
+        "id" : "0Kb8Ywsf728cqksYOfVHcG",
+        "is_playable" : true,
+        "name" : "Ain't No Right",
+        "preview_url" : "https://p.scdn.co/mp3-preview/79c23d4784a2c2d4bb82ba63f1104de2a10f5b64?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 2,
+        "type" : "track",
+        "uri" : "spotify:track:0Kb8Ywsf728cqksYOfVHcG"
+      }, {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/02NfyD6AlLA12crYzw5YcR"
+          },
+          "href" : "https://api.spotify.com/v1/artists/02NfyD6AlLA12crYzw5YcR",
+          "id" : "02NfyD6AlLA12crYzw5YcR",
+          "name" : "Jane's Addiction",
+          "type" : "artist",
+          "uri" : "spotify:artist:02NfyD6AlLA12crYzw5YcR"
+        } ],
+        "disc_number" : 1,
+        "duration_ms" : 279613,
+        "explicit" : false,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/1zYxJBAtdBIkw7I5WD7mSZ"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/1zYxJBAtdBIkw7I5WD7mSZ",
+        "id" : "1zYxJBAtdBIkw7I5WD7mSZ",
+        "is_playable" : true,
+        "name" : "Just Because",
+        "preview_url" : "https://p.scdn.co/mp3-preview/bd565faac3d4b73ef7c52e728d7c8097d934354b?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 3,
+        "type" : "track",
+        "uri" : "spotify:track:1zYxJBAtdBIkw7I5WD7mSZ"
+      }, {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/02NfyD6AlLA12crYzw5YcR"
+          },
+          "href" : "https://api.spotify.com/v1/artists/02NfyD6AlLA12crYzw5YcR",
+          "id" : "02NfyD6AlLA12crYzw5YcR",
+          "name" : "Jane's Addiction",
+          "type" : "artist",
+          "uri" : "spotify:artist:02NfyD6AlLA12crYzw5YcR"
+        } ],
+        "disc_number" : 1,
+        "duration_ms" : 542466,
+        "explicit" : false,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/0LEyQPQJltcQgtEqDS5v1M"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/0LEyQPQJltcQgtEqDS5v1M",
+        "id" : "0LEyQPQJltcQgtEqDS5v1M",
+        "is_playable" : true,
+        "name" : "Ted, Just Admit It...",
+        "preview_url" : "https://p.scdn.co/mp3-preview/91e1dcc7710b9513d0ed9326cecedb645c66adae?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 4,
+        "type" : "track",
+        "uri" : "spotify:track:0LEyQPQJltcQgtEqDS5v1M"
+      }, {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/02NfyD6AlLA12crYzw5YcR"
+          },
+          "href" : "https://api.spotify.com/v1/artists/02NfyD6AlLA12crYzw5YcR",
+          "id" : "02NfyD6AlLA12crYzw5YcR",
+          "name" : "Jane's Addiction",
+          "type" : "artist",
+          "uri" : "spotify:artist:02NfyD6AlLA12crYzw5YcR"
+        } ],
+        "disc_number" : 1,
+        "duration_ms" : 365320,
+        "explicit" : false,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/4ScrTS4H59NpKBtcBQMoBD"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/4ScrTS4H59NpKBtcBQMoBD",
+        "id" : "4ScrTS4H59NpKBtcBQMoBD",
+        "is_playable" : true,
+        "name" : "Been Caught Stealing",
+        "preview_url" : "https://p.scdn.co/mp3-preview/3432e473b2c395effc149a6b9dc71a46316abeda?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 5,
+        "type" : "track",
+        "uri" : "spotify:track:4ScrTS4H59NpKBtcBQMoBD"
+      }, {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/02NfyD6AlLA12crYzw5YcR"
+          },
+          "href" : "https://api.spotify.com/v1/artists/02NfyD6AlLA12crYzw5YcR",
+          "id" : "02NfyD6AlLA12crYzw5YcR",
+          "name" : "Jane's Addiction",
+          "type" : "artist",
+          "uri" : "spotify:artist:02NfyD6AlLA12crYzw5YcR"
+        } ],
+        "disc_number" : 1,
+        "duration_ms" : 254813,
+        "explicit" : false,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/0ymTjH1advUevXkigkMjxU"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/0ymTjH1advUevXkigkMjxU",
+        "id" : "0ymTjH1advUevXkigkMjxU",
+        "is_playable" : true,
+        "name" : "Irresistible Force (Met The Immovable Object)",
+        "preview_url" : "https://p.scdn.co/mp3-preview/7be7bbf9a949da2b2e5198452befd36dcb817eb6?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 6,
+        "type" : "track",
+        "uri" : "spotify:track:0ymTjH1advUevXkigkMjxU"
+      }, {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/02NfyD6AlLA12crYzw5YcR"
+          },
+          "href" : "https://api.spotify.com/v1/artists/02NfyD6AlLA12crYzw5YcR",
+          "id" : "02NfyD6AlLA12crYzw5YcR",
+          "name" : "Jane's Addiction",
+          "type" : "artist",
+          "uri" : "spotify:artist:02NfyD6AlLA12crYzw5YcR"
+        } ],
+        "disc_number" : 1,
+        "duration_ms" : 201746,
+        "explicit" : false,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/6eNAqIHl2q6YP6WejmvADG"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/6eNAqIHl2q6YP6WejmvADG",
+        "id" : "6eNAqIHl2q6YP6WejmvADG",
+        "is_playable" : true,
+        "name" : "Up The Beach",
+        "preview_url" : "https://p.scdn.co/mp3-preview/8d4cbd5378c4deabd1f189eae56085030742ef60?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 7,
+        "type" : "track",
+        "uri" : "spotify:track:6eNAqIHl2q6YP6WejmvADG"
+      }, {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/02NfyD6AlLA12crYzw5YcR"
+          },
+          "href" : "https://api.spotify.com/v1/artists/02NfyD6AlLA12crYzw5YcR",
+          "id" : "02NfyD6AlLA12crYzw5YcR",
+          "name" : "Jane's Addiction",
+          "type" : "artist",
+          "uri" : "spotify:artist:02NfyD6AlLA12crYzw5YcR"
+        } ],
+        "disc_number" : 1,
+        "duration_ms" : 456786,
+        "explicit" : true,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/4U5K2vZ7uNIfQFU6DF1Vss"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/4U5K2vZ7uNIfQFU6DF1Vss",
+        "id" : "4U5K2vZ7uNIfQFU6DF1Vss",
+        "is_playable" : true,
+        "name" : "Ocean Size",
+        "preview_url" : "https://p.scdn.co/mp3-preview/ab4998f74df90205148285edfa89d87f319e54e6?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 8,
+        "type" : "track",
+        "uri" : "spotify:track:4U5K2vZ7uNIfQFU6DF1Vss"
+      }, {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/02NfyD6AlLA12crYzw5YcR"
+          },
+          "href" : "https://api.spotify.com/v1/artists/02NfyD6AlLA12crYzw5YcR",
+          "id" : "02NfyD6AlLA12crYzw5YcR",
+          "name" : "Jane's Addiction",
+          "type" : "artist",
+          "uri" : "spotify:artist:02NfyD6AlLA12crYzw5YcR"
+        } ],
+        "disc_number" : 1,
+        "duration_ms" : 710120,
+        "explicit" : false,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/6B2BFdJs3afocnWFAeUSs2"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/6B2BFdJs3afocnWFAeUSs2",
+        "id" : "6B2BFdJs3afocnWFAeUSs2",
+        "is_playable" : true,
+        "name" : "Three Days",
+        "preview_url" : "https://p.scdn.co/mp3-preview/331937684f8b7fd6e9e6f4ae9503eb6dae97872b?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 9,
+        "type" : "track",
+        "uri" : "spotify:track:6B2BFdJs3afocnWFAeUSs2"
+      }, {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/02NfyD6AlLA12crYzw5YcR"
+          },
+          "href" : "https://api.spotify.com/v1/artists/02NfyD6AlLA12crYzw5YcR",
+          "id" : "02NfyD6AlLA12crYzw5YcR",
+          "name" : "Jane's Addiction",
+          "type" : "artist",
+          "uri" : "spotify:artist:02NfyD6AlLA12crYzw5YcR"
+        } ],
+        "disc_number" : 1,
+        "duration_ms" : 280346,
+        "explicit" : true,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/3uPo73xJgsctz46wjR4aqi"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/3uPo73xJgsctz46wjR4aqi",
+        "id" : "3uPo73xJgsctz46wjR4aqi",
+        "is_playable" : true,
+        "name" : "Mountain Song",
+        "preview_url" : "https://p.scdn.co/mp3-preview/7de576fb032281b832b868a6cb161293676fd242?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 10,
+        "type" : "track",
+        "uri" : "spotify:track:3uPo73xJgsctz46wjR4aqi"
+      }, {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/02NfyD6AlLA12crYzw5YcR"
+          },
+          "href" : "https://api.spotify.com/v1/artists/02NfyD6AlLA12crYzw5YcR",
+          "id" : "02NfyD6AlLA12crYzw5YcR",
+          "name" : "Jane's Addiction",
+          "type" : "artist",
+          "uri" : "spotify:artist:02NfyD6AlLA12crYzw5YcR"
+        } ],
+        "disc_number" : 1,
+        "duration_ms" : 447786,
+        "explicit" : true,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/5htkuqsLlfll8vbchIVaSM"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/5htkuqsLlfll8vbchIVaSM",
+        "id" : "5htkuqsLlfll8vbchIVaSM",
+        "is_playable" : true,
+        "name" : "Stop!",
+        "preview_url" : "https://p.scdn.co/mp3-preview/14f3fcd2844587e0fd4298665205395d64ca4270?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 11,
+        "type" : "track",
+        "uri" : "spotify:track:5htkuqsLlfll8vbchIVaSM"
+      }, {
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/02NfyD6AlLA12crYzw5YcR"
+          },
+          "href" : "https://api.spotify.com/v1/artists/02NfyD6AlLA12crYzw5YcR",
+          "id" : "02NfyD6AlLA12crYzw5YcR",
+          "name" : "Jane's Addiction",
+          "type" : "artist",
+          "uri" : "spotify:artist:02NfyD6AlLA12crYzw5YcR"
+        } ],
+        "disc_number" : 1,
+        "duration_ms" : 394960,
+        "explicit" : false,
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/4A1i43mr5BGkGmyCMb1VHB"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/4A1i43mr5BGkGmyCMb1VHB",
+        "id" : "4A1i43mr5BGkGmyCMb1VHB",
+        "is_playable" : true,
+        "name" : "Jane Says",
+        "preview_url" : "https://p.scdn.co/mp3-preview/833c0b4ef38a38521e89eb427dd4fad257ac069e?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 12,
+        "type" : "track",
+        "uri" : "spotify:track:4A1i43mr5BGkGmyCMb1VHB"
+      } ],
+      "limit" : 50,
+      "next" : null,
+      "offset" : 0,
+      "previous" : null,
+      "total" : 12
+    },
+    "type" : "album",
+    "uri" : "spotify:album:6vh6Upe0uvW0K508yuvITl"
+  } ]
+}
