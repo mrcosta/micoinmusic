@@ -1,0 +1,144 @@
+{
+  "artists": {
+    "items": [
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/00FQb4jTyendYWaN8pK0wa"
+        },
+        "followers": {
+          "href": null,
+          "total": 5289879
+        },
+        "genres": [
+          "dance pop",
+          "pop"
+        ],
+        "href": "https://api.spotify.com/v1/artists/00FQb4jTyendYWaN8pK0wa",
+        "id": "00FQb4jTyendYWaN8pK0wa",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/56a3782b07eab32b5340f164c566349450ee84cd",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/7891384e95fa3c1a7020645ae790c7924f7ae1dc",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/79e5bc2897ca24249707294d1e9324441bda97af",
+            "width": 160
+          }
+        ],
+        "name": "Lana Del Rey",
+        "popularity": 90,
+        "type": "artist",
+        "uri": "spotify:artist:00FQb4jTyendYWaN8pK0wa"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/01F64hXfIisZbwBf1VCwQT"
+        },
+        "followers": {
+          "href": null,
+          "total": 12852
+        },
+        "genres": [
+          "brazilian indie",
+          "mpb",
+          "rock gaucho"
+        ],
+        "href": "https://api.spotify.com/v1/artists/01F64hXfIisZbwBf1VCwQT",
+        "id": "01F64hXfIisZbwBf1VCwQT",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/f7b9514af9b881c8c8fd5846a80224f313beb3f6",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/a0ece88281c734fa25b3c77c36f946f843dde1ff",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ed97d4595f982a63faea20d0c60238e622b7c3f2",
+            "width": 64
+          }
+        ],
+        "name": "Carne Doce",
+        "popularity": 43,
+        "type": "artist",
+        "uri": "spotify:artist:01F64hXfIisZbwBf1VCwQT"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/02NfyD6AlLA12crYzw5YcR"
+        },
+        "followers": {
+          "href": null,
+          "total": 246347
+        },
+        "genres": [
+          "alternative metal",
+          "alternative rock",
+          "blues-rock",
+          "classic rock",
+          "dance rock",
+          "funk metal",
+          "funk rock",
+          "garage rock",
+          "grunge",
+          "hard rock",
+          "industrial rock",
+          "modern rock",
+          "neo-psychedelic",
+          "nu metal",
+          "permanent wave",
+          "pop rock",
+          "post-grunge",
+          "punk",
+          "rock"
+        ],
+        "href": "https://api.spotify.com/v1/artists/02NfyD6AlLA12crYzw5YcR",
+        "id": "02NfyD6AlLA12crYzw5YcR",
+        "images": [
+          {
+            "height": 667,
+            "url": "https://i.scdn.co/image/63c5e0dece1fca1b8185170bae671960e9168df3",
+            "width": 1000
+          },
+          {
+            "height": 427,
+            "url": "https://i.scdn.co/image/1313b1121aea77eb6d9890e1cd074beed6519316",
+            "width": 640
+          },
+          {
+            "height": 133,
+            "url": "https://i.scdn.co/image/7a2e51914580a08513853cf5efa554deffb12712",
+            "width": 200
+          },
+          {
+            "height": 43,
+            "url": "https://i.scdn.co/image/dad15cc2e1861a75a78714c40bbc5359fe605525",
+            "width": 64
+          }
+        ],
+        "name": "Jane's Addiction",
+        "popularity": 61,
+        "type": "artist",
+        "uri": "spotify:artist:02NfyD6AlLA12crYzw5YcR"
+      }
+    ],
+    "next": null,
+    "total": 437,
+    "cursors": {
+      "after": null
+    },
+    "limit": 50,
+    "href": "https://api.spotify.com/v1/me/following?type=artist&limit=50"
+  }
+}

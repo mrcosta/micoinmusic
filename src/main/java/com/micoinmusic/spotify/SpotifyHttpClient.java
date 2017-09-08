@@ -26,7 +26,6 @@ public class SpotifyHttpClient {
     }
 
     public String doCall(String endpoint, String oauthToken) {
-        System.out.println("THE URL" + baseUrl);
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
                 .addHeader(ACCEPT, APPLICATION_JSON_VALUE)
