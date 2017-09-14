@@ -5,6 +5,8 @@ import com.micoinmusic.spotify.parsers.SpotifyJsonParser;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -19,13 +21,13 @@ public class SpotifyAlbumsServiceTest extends HttpBuildResponses {
 
     private SpotifyAlbumsService spotifyArtistsService;
 
-    @Before
+    @BeforeAll
     public void setUp() throws Exception {
         super.setUp();
         spotifyArtistsService = new SpotifyAlbumsService(new SpotifyJsonParser(), new SpotifyHttpClient(server.url("").toString()));
     }
 
-    @After
+    @AfterAll
     public void tearDown() throws IOException {
         server.shutdown();
     }
