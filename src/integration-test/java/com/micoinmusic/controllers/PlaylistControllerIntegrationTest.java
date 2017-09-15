@@ -2,9 +2,10 @@ package com.micoinmusic.controllers;
 
 import net.codestory.http.WebServer;
 import net.codestory.http.payload.Payload;
-import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -32,12 +33,20 @@ public class PlaylistControllerIntegrationTest {
     @Autowired
     private MockMvc mvc;
 
-    @Before
+    @BeforeAll
     public void setUp() {
         WebServer webServer = new WebServer();
-        webServer.configure(routes ->
-            routes.get("/v1/me/following?type=artist&limit=50", addResponse("requests_stubs/profile/followed_artists.json"))
-        );
+        webServer.configure(routes -> {
+            routes.get("/v1/me/following?type=artist&limit=50", addResponse("requests_stubs/profile/followed_artists.json"));
+
+            routes.get("/v1/artists/00FQb4jTyendYWaN8pK0wa/albums?album_type=album&market=US&limit=50", addResponse("requests_stubs/albums/lana_albums.json"));
+            routes.get("/v1/artists/01F64hXfIisZbwBf1VCwQT/albums?album_type=album&market=US&limit=50", addResponse("requests_stubs/albums/carne_albums.json"));
+            routes.get("/v1/artists/02NfyD6AlLA12crYzw5YcR/albums?album_type=album&market=US&limit=50", addResponse("requests_stubs/albums/janes_albums.json"));
+
+            routes.get("/v1/albums?ids=<albumsId>&market=US", addResponse("requests_stubs/albums/lana_albums_with_rd.json"));
+            routes.get("/v1/albums?ids=<albumsId>&market=US", addResponse("requests_stubs/albums/carne_albums_with_rd.json"));
+            routes.get("/v1/albums?ids=<albumsId>&market=US", addResponse("requests_stubs/albums/janes_albums_with_rd.json"));
+        });
 
         webServer.start(4040);
     }
