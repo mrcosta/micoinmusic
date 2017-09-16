@@ -2,10 +2,9 @@ package com.micoinmusic.controllers;
 
 import net.codestory.http.WebServer;
 import net.codestory.http.payload.Payload;
+import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Disabled;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -33,7 +32,7 @@ public class PlaylistControllerIntegrationTest {
     @Autowired
     private MockMvc mvc;
 
-    @BeforeAll
+    @Before
     public void setUp() {
         WebServer webServer = new WebServer();
         webServer.configure(routes -> {

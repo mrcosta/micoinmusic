@@ -39,6 +39,10 @@ public class Playlist {
         List<Album> currentYearAlbums = artists.stream().map(artist -> albums.getArtistAlbumFromCurrentYear(authToken, artist.getId())).filter(album -> album != null).collect(toList());
         List<Track>  tracks = currentYearAlbums.stream().flatMap(album -> album.getTracks().getItems().stream().limit(MAX_TRACKS)).collect(toList());
 
-        return new Playlist("This 2018 in music", tracks, LocalDate.now().getYear());
+        return new Playlist(getPlaylistName(), tracks, LocalDate.now().getYear());
+    }
+
+    private String getPlaylistName() {
+        return "This " + LocalDate.now().getYear() + " in music";
     }
 }

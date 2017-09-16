@@ -50,7 +50,7 @@ public class PlaylistTest {
         List<String> artists = getPropertyList(createdPlaylist.getTracks(), Track::getArtist);
         List<String> albums = getPropertyList(createdPlaylist.getTracks(), Track::getAlbum);
 
-        assertThat(createdPlaylist.getName(), is("This 2018 in music"));
+        assertThat(createdPlaylist.getName(), is("This 2017 in music"));
         assertThat(createdPlaylist.getTracks().size(), is(2));
         assertThat(artists, is(asList("Lorde", "Foster The People")));
         assertThat(albums, is(asList("Melodrama", "Sacred Hearts Club")));
@@ -72,7 +72,7 @@ public class PlaylistTest {
         Playlist createdPlaylist = playlist.createPlaylist(AUTH_TOKEN);
         List<String> names = getPropertyList(createdPlaylist.getTracks(), Track::getName);
 
-        assertThat(createdPlaylist.getName(), is("This 2018 in music"));
+        assertThat(createdPlaylist.getName(), is("This 2017 in music"));
         assertThat(createdPlaylist.getTracks().size(), is(4));
         assertThat(names, is(asList("Green Light", "Sober", "Homemade Dynamite", "The Louvre")));
     }
@@ -83,7 +83,7 @@ public class PlaylistTest {
 
         Playlist createdPlaylist = playlist.createPlaylist("randomAuthToken");
 
-        assertThat(createdPlaylist.getName(), is("This 2018 in music"));
+        assertThat(createdPlaylist.getName(), is("This 2017 in music"));
         assertThat(createdPlaylist.getTracks().size(), is(0));
     }
 
