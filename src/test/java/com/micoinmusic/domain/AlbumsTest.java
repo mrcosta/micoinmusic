@@ -34,8 +34,8 @@ public class AlbumsTest {
         when(spotifyArtistsService.getAlbums(AUTH_TOKEN, "arcadeFireId")).thenReturn(arcadeFirealbums);
 
         Tracks everythingNowtracks = new Tracks(asList(new Track("Everything_Now(continued)", "everythingNowContinuedId"), new Track("Everything Now", "everythingNowId")));
-        List<Album> arcadeFirealbumsWithReleaseDate = asList(new Album("Everything Now", "idEN", LocalDate.now(), everythingNowtracks), new Album("Reflektor (Deluxe)", "idRD", LocalDate.of(2015, 7, 2)), new Album("Reflektor", "idR", LocalDate.of(2013, 7, 2)));
-        when(spotifyArtistsService.getAlbumsWithReleaseDate(AUTH_TOKEN, asList("idEN", "idRD", "idR"))).thenReturn(arcadeFirealbumsWithReleaseDate);
+        Album arcadeFirealbumWithReleaseDate = new Album("Everything Now", "idEN", LocalDate.now(), everythingNowtracks);
+        when(spotifyArtistsService.getLastAlbumReleaseDate(AUTH_TOKEN, "idEN")).thenReturn(arcadeFirealbumWithReleaseDate);
 
         Album album = albums.getArtistAlbumFromCurrentYear(AUTH_TOKEN, "arcadeFireId");
         List<Track> tracks = album.getTracks().getItems();
@@ -51,8 +51,8 @@ public class AlbumsTest {
         List<Album> arcadeFirealbums = asList(new Album("Everything Now", "idEN"), new Album("Reflektor (Deluxe)", "idRD"), new Album("Reflektor", "idR"));
         when(spotifyArtistsService.getAlbums(AUTH_TOKEN, "arcadeFireId")).thenReturn(arcadeFirealbums);
 
-        List<Album> arcadeFirealbumsWithReleaseDate = asList(new Album("Reflektor (Deluxe)", "idRD", LocalDate.of(2015, 7, 2)), new Album("Reflektor", "idR", LocalDate.of(2013, 7, 2)));
-        when(spotifyArtistsService.getAlbumsWithReleaseDate(AUTH_TOKEN, asList("idRD", "idR"))).thenReturn(arcadeFirealbumsWithReleaseDate);
+        Album arcadeFirealbumWithReleaseDate = new Album("Reflektor (Deluxe)", "idRD", LocalDate.of(2015, 7, 2));
+        when(spotifyArtistsService.getLastAlbumReleaseDate(AUTH_TOKEN, "idEN")).thenReturn(arcadeFirealbumWithReleaseDate);
 
         Album album = albums.getArtistAlbumFromCurrentYear(AUTH_TOKEN, "arcadeFireId");
 

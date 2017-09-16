@@ -6,8 +6,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-import static java.util.stream.Collectors.toList;
-
 @Component
 public class Albums {
 
@@ -20,10 +18,10 @@ public class Albums {
 
     public Album getArtistAlbumFromCurrentYear(String authToken, String artistId) {
         List<Album> albums = albumsService.getAlbums(authToken, artistId);
-        List<Album> albumsWithReleaseDate = albumsService.getAlbumsWithReleaseDate(authToken, albums.stream().map(Album::getId).collect(toList()));
+        Album lastAlbumWithReleaseDate = albumsService.getLastAlbumReleaseDate(authToken, albums.get(0).getId());
 
         // TODO: retrieve the musics with popularity here
 
-        return albumsWithReleaseDate.stream().filter(Album::isFromCurrentYear).findFirst().orElse(null);
+        return lastAlbumWithReleaseDate.isFromCurrentYear() ? lastAlbumWithReleaseDate : null;
     }
 }

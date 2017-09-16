@@ -2,15 +2,11 @@ package com.micoinmusic.spotify;
 
 import com.micoinmusic.domain.Album;
 import com.micoinmusic.spotify.parsers.SpotifyJsonParser;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 
 import java.io.IOException;
-import java.time.LocalDate;
-import java.util.Arrays;
 import java.util.List;
 
 import static java.util.stream.Collectors.toList;
@@ -59,14 +55,11 @@ public class SpotifyAlbumsServiceTest extends HttpBuildResponses {
     public void shouldGetTheAlbumsForTheGivenArtistWithReleaseDate() throws Exception {
         addResponse("requests_stubs/artists/artist_albums_with_release_date.json");
 
-        List<Album> albums = spotifyArtistsService.getAlbumsWithReleaseDate("AQDxVIjCisbrCzM", Arrays.asList("2wart5Qjnvx1fd7LPdQxgJ", "2m7L60M210ABzrY9GLyBPZ", "3KuXEGcqLcnEYWnn3OEGy0"));
-        List<LocalDate> albumsReleaseDates = albums.stream().map(Album::getReleaseDate).collect(toList());
+        Album lastAlbumWithReleaseDate = spotifyArtistsService.getLastAlbumReleaseDate("AQDxVIjCisbrCzM", "2wart5Qjnvx1fd7LPdQxgJ");
 
-        assertThat(albums.size(), is(3));
-        assertThat(albumsReleaseDates.get(0).getYear(), is(2015));
-        assertThat(albums.get(0).getTracks().getItems().get(0).getName(), is("Dead Inside"));
-        assertThat(albums.get(0).getTracks().getItems().get(0).getId(), is("2daZovie6pc2ZK7StayD1K"));
-        assertThat(albumsReleaseDates.get(2).getYear(), is(2012));
-        assertThat(server.takeRequest().getPath(), is("/v1/albums?ids=2wart5Qjnvx1fd7LPdQxgJ,2m7L60M210ABzrY9GLyBPZ,3KuXEGcqLcnEYWnn3OEGy0&market=US"));
+        assertThat(lastAlbumWithReleaseDate.getReleaseDate().getYear(), is(2015));
+        assertThat(lastAlbumWithReleaseDate.getTracks().getItems().get(0).getName(), is("Dead Inside"));
+        assertThat(lastAlbumWithReleaseDate.getTracks().getItems().get(0).getId(), is("2daZovie6pc2ZK7StayD1K"));
+        assertThat(server.takeRequest().getPath(), is("/v1/albums?ids=2wart5Qjnvx1fd7LPdQxgJ&market=US"));
     }
 }

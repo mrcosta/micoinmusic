@@ -42,9 +42,9 @@ public class PlaylistControllerIntegrationTest {
             routes.get("/v1/artists/01F64hXfIisZbwBf1VCwQT/albums?album_type=album&market=US&limit=50", addResponse("requests_stubs/albums/carne_albums.json"));
             routes.get("/v1/artists/02NfyD6AlLA12crYzw5YcR/albums?album_type=album&market=US&limit=50", addResponse("requests_stubs/albums/janes_albums.json"));
 
-            routes.get("/v1/albums?ids=<albumsId>&market=US", addResponse("requests_stubs/albums/lana_albums_with_rd.json"));
-            routes.get("/v1/albums?ids=<albumsId>&market=US", addResponse("requests_stubs/albums/carne_albums_with_rd.json"));
-            routes.get("/v1/albums?ids=<albumsId>&market=US", addResponse("requests_stubs/albums/janes_albums_with_rd.json"));
+            routes.get("/v1/albums?ids=7xYiTrbTL57QO0bb4hXIKo&market=US", addResponse("requests_stubs/albums/lana_albums_with_rd.json"));
+            routes.get("/v1/albums?ids=3krb3LsOogMryKOllCsYAL&market=US", addResponse("requests_stubs/albums/carne_albums_with_rd.json"));
+            routes.get("/v1/albums?ids=6XQRLJZqxADFmJYbDUOpGN&market=US", addResponse("requests_stubs/albums/janes_albums_with_rd.json"));
         });
 
         webServer.start(4040);

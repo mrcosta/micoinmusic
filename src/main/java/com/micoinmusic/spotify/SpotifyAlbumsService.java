@@ -10,13 +10,14 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.function.Function;
-import java.util.stream.Collectors;
 
 @Service
 public class SpotifyAlbumsService implements AlbumsService {
 
-    private static final String ARTISTS_ALBUNS = "v1/artists/<artistId>/albums?album_type=album&market=US&limit=50";
-    private static final String ALBUMS = "v1/albums?ids=<albumsId>&market=US";
+    private static final String ARTIST_ID_PARAMETER = "<artistId>";
+    private static final String ARTISTS_ALBUNS = "v1/artists/" + ARTIST_ID_PARAMETER + "/albums?album_type=album&market=US&limit=50";
+    private static final String ALBUMS_ID_PARAMETER = "<albumId>";
+    private static final String ALBUMS = "v1/albums?ids=" + ALBUMS_ID_PARAMETER +"&market=US";
 
     private SpotifyJsonParser spotifyJsonParser;
     private SpotifyHttpClient spotifyHttpClient;
@@ -29,14 +30,14 @@ public class SpotifyAlbumsService implements AlbumsService {
 
     @Override
     public List<Album> getAlbums(String authToken, String artistId) {
-        String url = ARTISTS_ALBUNS.replace("<artistId>", artistId);
+        String url = ARTISTS_ALBUNS.replace(ARTIST_ID_PARAMETER, artistId);
         return getAlbumsFrom(authToken, url, "items");
     }
 
     @Override
-    public List<Album> getAlbumsWithReleaseDate(String authToken, List<String> albumsId) {
-        String url = ALBUMS.replace("<albumsId>", albumsId.stream().collect(Collectors.joining(",")));
-        return getAlbumsFrom(authToken, url, "albums");
+    public Album getLastAlbumReleaseDate(String authToken, String albumId) {
+        String url = ALBUMS.replace(ALBUMS_ID_PARAMETER, albumId);
+        return getAlbumsFrom(authToken, url, "albums").get(0);
     }
 
     private List<Album> getAlbumsFrom(String authToken, String url, String startingObject) {

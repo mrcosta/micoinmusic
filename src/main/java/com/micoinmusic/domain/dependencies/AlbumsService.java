@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface AlbumsService {
     public List<Album> getAlbums(String authToken, String artistId);
-    public List<Album> getAlbumsWithReleaseDate(String authToken, List<String> albumsId);
+    public Album getLastAlbumReleaseDate(String authToken, String albumId);
 }
