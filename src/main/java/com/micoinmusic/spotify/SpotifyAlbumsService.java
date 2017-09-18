@@ -35,7 +35,7 @@ public class SpotifyAlbumsService implements AlbumsService {
     }
 
     @Override
-    public Album getLastAlbumReleaseDate(String authToken, String albumId) {
+    public Album getLatestAlbumReleaseDate(String authToken, String albumId) {
         String url = ALBUMS.replace(ALBUMS_ID_PARAMETER, albumId);
         return getAlbumsFrom(authToken, url, "albums").get(0);
     }

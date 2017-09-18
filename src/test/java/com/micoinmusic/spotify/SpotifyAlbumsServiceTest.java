@@ -55,7 +55,7 @@ public class SpotifyAlbumsServiceTest extends HttpBuildResponses {
     public void shouldGetTheAlbumsForTheGivenArtistWithReleaseDate() throws Exception {
         addResponse("requests_stubs/artists/artist_albums_with_release_date.json");
 
-        Album lastAlbumWithReleaseDate = spotifyArtistsService.getLastAlbumReleaseDate("AQDxVIjCisbrCzM", "2wart5Qjnvx1fd7LPdQxgJ");
+        Album lastAlbumWithReleaseDate = spotifyArtistsService.getLatestAlbumReleaseDate("AQDxVIjCisbrCzM", "2wart5Qjnvx1fd7LPdQxgJ");
 
         assertThat(lastAlbumWithReleaseDate.getReleaseDate().getYear(), is(2015));
         assertThat(lastAlbumWithReleaseDate.getTracks().getItems().get(0).getName(), is("Dead Inside"));

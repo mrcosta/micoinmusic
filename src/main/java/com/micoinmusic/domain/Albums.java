@@ -18,10 +18,17 @@ public class Albums {
 
     public Album getArtistAlbumFromCurrentYear(String authToken, String artistId) {
         List<Album> albums = albumsService.getAlbums(authToken, artistId);
-        Album lastAlbumWithReleaseDate = albumsService.getLastAlbumReleaseDate(authToken, albums.get(0).getId());
 
         // TODO: retrieve the musics with popularity here
+        if (artistHasAtLeastOneAlbum(albums)) {
+            Album lastAlbumWithReleaseDate = albumsService.getLatestAlbumReleaseDate(authToken, albums.get(0).getId());
+            return lastAlbumWithReleaseDate.isFromCurrentYear() ? lastAlbumWithReleaseDate : null;
+        }
 
-        return lastAlbumWithReleaseDate.isFromCurrentYear() ? lastAlbumWithReleaseDate : null;
+        return null;
+    }
+
+    private boolean artistHasAtLeastOneAlbum(List<Album> albums) {
+        return albums.isEmpty() ? false : true;
     }
 }

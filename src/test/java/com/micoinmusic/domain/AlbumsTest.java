@@ -35,7 +35,7 @@ public class AlbumsTest {
 
         Tracks everythingNowtracks = new Tracks(asList(new Track("Everything_Now(continued)", "everythingNowContinuedId"), new Track("Everything Now", "everythingNowId")));
         Album arcadeFirealbumWithReleaseDate = new Album("Everything Now", "idEN", LocalDate.now(), everythingNowtracks);
-        when(spotifyArtistsService.getLastAlbumReleaseDate(AUTH_TOKEN, "idEN")).thenReturn(arcadeFirealbumWithReleaseDate);
+        when(spotifyArtistsService.getLatestAlbumReleaseDate(AUTH_TOKEN, "idEN")).thenReturn(arcadeFirealbumWithReleaseDate);
 
         Album album = albums.getArtistAlbumFromCurrentYear(AUTH_TOKEN, "arcadeFireId");
         List<Track> tracks = album.getTracks().getItems();
@@ -52,12 +52,19 @@ public class AlbumsTest {
         when(spotifyArtistsService.getAlbums(AUTH_TOKEN, "arcadeFireId")).thenReturn(arcadeFirealbums);
 
         Album arcadeFirealbumWithReleaseDate = new Album("Reflektor (Deluxe)", "idRD", LocalDate.of(2015, 7, 2));
-        when(spotifyArtistsService.getLastAlbumReleaseDate(AUTH_TOKEN, "idEN")).thenReturn(arcadeFirealbumWithReleaseDate);
+        when(spotifyArtistsService.getLatestAlbumReleaseDate(AUTH_TOKEN, "idEN")).thenReturn(arcadeFirealbumWithReleaseDate);
 
         Album album = albums.getArtistAlbumFromCurrentYear(AUTH_TOKEN, "arcadeFireId");
 
         assertThat(album, is(nullValue()));
     }
 
-    // TODO: should return null when artist doesn't have any album
+    @Test
+    public void shouldReturnNullWhenArtistDoesntHaveAnyAlbums() {
+        when(spotifyArtistsService.getAlbums(AUTH_TOKEN, "arcadeFireId")).thenReturn(asList());
+
+        Album album = albums.getArtistAlbumFromCurrentYear(AUTH_TOKEN, "arcadeFireId");
+
+        assertThat(album, is(nullValue()));
+    }
 }
