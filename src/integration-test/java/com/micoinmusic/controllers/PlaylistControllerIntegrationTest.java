@@ -1,7 +1,8 @@
 package com.micoinmusic.controllers;
 
-import net.codestory.http.WebServer;
-import net.codestory.http.payload.Payload;
+import com.google.common.collect.ImmutableMap;
+import com.micoinmusic.spotify.HttpBuildResponses;
+import okhttp3.mockwebserver.MockResponse;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -17,9 +18,9 @@ import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Map;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON;
-import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -27,41 +28,32 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-public class PlaylistControllerIntegrationTest {
+public class PlaylistControllerIntegrationTest extends HttpBuildResponses {
 
     @Autowired
     private MockMvc mvc;
 
     @Before
-    public void setUp() {
-        WebServer webServer = new WebServer();
-        webServer.configure(routes -> {
-            routes.get("/v1/me/following?type=artist&limit=50", addResponse("requests_stubs/profile/followed_artists.json"));
-
-            routes.get("/v1/artists/00FQb4jTyendYWaN8pK0wa/albums?album_type=album&market=US&limit=50", addResponse("requests_stubs/albums/lana_albums.json"));
-            routes.get("/v1/artists/01F64hXfIisZbwBf1VCwQT/albums?album_type=album&market=US&limit=50", addResponse("requests_stubs/albums/carne_albums.json"));
-            routes.get("/v1/artists/02NfyD6AlLA12crYzw5YcR/albums?album_type=album&market=US&limit=50", addResponse("requests_stubs/albums/janes_albums.json"));
-
-            routes.get("/v1/albums?ids=7xYiTrbTL57QO0bb4hXIKo&market=US", addResponse("requests_stubs/albums/lana_albums_with_rd.json"));
-            routes.get("/v1/albums?ids=3krb3LsOogMryKOllCsYAL&market=US", addResponse("requests_stubs/albums/carne_albums_with_rd.json"));
-            routes.get("/v1/albums?ids=6XQRLJZqxADFmJYbDUOpGN&market=US", addResponse("requests_stubs/albums/janes_albums_with_rd.json"));
-        });
-
-        webServer.start(4040);
+    public void setUp() throws Exception {
+        super.setUp();
     }
 
     @Test
     @Ignore
     public void shouldSayHi() throws Exception {
-        String authToken = "BQAzjAmVDmUxeu";
+        Map<String, MockResponse> responses = ImmutableMap.<String, MockResponse>builder()
+            .put("/v1/me/following?type=artist&limit=50", getJsonMock("requests_stubs/profile/followed_artists.json"))
+            .put("/v1/artists/00FQb4jTyendYWaN8pK0wa/albums?album_type=album&market=US&limit=50", getJsonMock("requests_stubs/albums/lana_albums.json"))
+            .put("/v1/artists/01F64hXfIisZbwBf1VCwQT/albums?album_type=album&market=US&limit=50", getJsonMock("requests_stubs/albums/carne_albums.json"))
+            .put("/v1/artists/02NfyD6AlLA12crYzw5YcR/albums?album_type=album&market=US&limit=50", getJsonMock("requests_stubs/albums/janes_albums.json"))
+            .put("/v1/albums?ids=7xYiTrbTL57QO0bb4hXIKo&market=US", getJsonMock("requests_stubs/albums/lana_albums_with_rd.json"))
+            .put("/v1/albums?ids=3krb3LsOogMryKOllCsYAL&market=US", getJsonMock("requests_stubs/albums/carne_albums_with_rd.json"))
+            .put("/v1/albums?ids=6XQRLJZqxADFmJYbDUOpGN&market=US", getJsonMock("requests_stubs/albums/janes_albums_with_rd.json")).build();
+        setResponses(responses);
 
-        mvc.perform(post("/playlists?authToken=" + authToken).accept(APPLICATION_JSON))
+        mvc.perform(post("/playlists?authToken=BQAzjAmVDmUxeu").accept(APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().json(toString("responses/playlist.json")));
-    }
-
-    private Payload addResponse(String jsonPath) {
-        return new Payload(APPLICATION_JSON_UTF8_VALUE, toString(jsonPath));
     }
 
     private String toString(String jsonPath) {

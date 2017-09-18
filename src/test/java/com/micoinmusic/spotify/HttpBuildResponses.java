@@ -1,7 +1,9 @@
 package com.micoinmusic.spotify;
 
+import okhttp3.mockwebserver.Dispatcher;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
+import okhttp3.mockwebserver.RecordedRequest;
 import org.junit.After;
 import org.junit.Before;
 import org.springframework.http.HttpStatus;
@@ -11,6 +13,7 @@ import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Map;
 
 public abstract class HttpBuildResponses {
 
@@ -29,16 +32,30 @@ public abstract class HttpBuildResponses {
     }
 
     protected void addUnauthorizedResponse() throws URISyntaxException, IOException {
-        Path responsePath = Paths.get(getClass().getClassLoader().getResource("requests_stubs/errors/invalid_token.json").toURI());
-        String responseContent = new String(Files.readAllBytes(responsePath));
-
-        server.enqueue(new MockResponse().setResponseCode(HttpStatus.UNAUTHORIZED.value()).setBody(responseContent));
+        server.enqueue(new MockResponse().setResponseCode(HttpStatus.UNAUTHORIZED.value()).setBody(getJsonString("requests_stubs/errors/invalid_token.json")));
     }
 
     protected void addResponse(String jsonFilePath) throws URISyntaxException, IOException {
-        Path responsePath = Paths.get(getClass().getClassLoader().getResource(jsonFilePath).toURI());
-        String responseContent = new String(Files.readAllBytes(responsePath));
+        server.enqueue(getJsonMock(jsonFilePath));
+    }
 
-        server.enqueue(new MockResponse().setBody(responseContent));
+    protected String getJsonString(String jsonFilePath) throws URISyntaxException, IOException {
+        Path responsePath = Paths.get(getClass().getClassLoader().getResource(jsonFilePath).toURI());
+        return new String(Files.readAllBytes(responsePath));
+    }
+
+    protected MockResponse getJsonMock(String jsonFilePath) throws IOException, URISyntaxException {
+        return new MockResponse().setBody(getJsonString(jsonFilePath));
+    }
+
+    protected void setResponses(Map<String, MockResponse> responses) {
+        Dispatcher dispatcher = new Dispatcher() {
+            @Override
+            public MockResponse dispatch(RecordedRequest request) throws InterruptedException {
+                return responses.get(request.getPath());
+            }
+        };
+
+        server.setDispatcher(dispatcher);
     }
 }

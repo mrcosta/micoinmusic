@@ -58,4 +58,6 @@ public class AlbumsTest {
 
         assertThat(album, is(nullValue()));
     }
+
+    // TODO: should return null when artist doesn't have any album
 }

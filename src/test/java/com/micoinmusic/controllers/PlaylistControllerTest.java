@@ -32,7 +32,7 @@ public class PlaylistControllerTest {
     }
 
     @Test
-    public void shouldSayHi() {
+    public void shouldCreatePlaylistForTheGivenYear() {
         int currentYear = LocalDate.now().getYear();
 
         Playlist stubedPlaylist = new Playlist("This 2018 in music", asList(new Track("Music", "id", "Artist", "Album")), currentYear);
