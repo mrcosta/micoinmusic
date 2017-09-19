@@ -58,8 +58,10 @@ public class SpotifyAlbumsServiceTest extends HttpBuildResponses {
         Album lastAlbumWithReleaseDate = spotifyArtistsService.getLatestAlbumReleaseDate("AQDxVIjCisbrCzM", "2wart5Qjnvx1fd7LPdQxgJ");
 
         assertThat(lastAlbumWithReleaseDate.getReleaseDate().getYear(), is(2015));
-        assertThat(lastAlbumWithReleaseDate.getTracks().getItems().get(0).getName(), is("Dead Inside"));
-        assertThat(lastAlbumWithReleaseDate.getTracks().getItems().get(0).getId(), is("2daZovie6pc2ZK7StayD1K"));
+        assertThat(lastAlbumWithReleaseDate.getTracks().get(0).getName(), is("Dead Inside"));
+        assertThat(lastAlbumWithReleaseDate.getTracks().get(0).getId(), is("2daZovie6pc2ZK7StayD1K"));
+        assertThat(lastAlbumWithReleaseDate.getTracks().get(0).getAlbum(), is("Drones"));
+        assertThat(lastAlbumWithReleaseDate.getTracks().get(0).getArtist(), is("Muse"));
         assertThat(server.takeRequest().getPath(), is("/v1/albums?ids=2wart5Qjnvx1fd7LPdQxgJ&market=US"));
     }
 }

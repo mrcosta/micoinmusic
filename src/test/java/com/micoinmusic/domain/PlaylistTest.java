@@ -37,12 +37,12 @@ public class PlaylistTest {
     public void shouldCreatePlaylistForTheGivenYear() throws Exception {
         when(spotifyProfileService.getFollowedArtists(AUTH_TOKEN)).thenReturn(asList(new Artist("Lorde", "1"), new Artist("Arcade Fire", "5"), new Artist("Foster the People", "9")));
 
-        Tracks melodramaTracks = new Tracks(asList(new Track("Green Light", "glId", "Lorde", "Melodrama")));
+        List<Track> melodramaTracks = asList(new Track("Green Light", "glId", "Lorde", "Melodrama"));
         when(albums.getArtistAlbumFromCurrentYear(AUTH_TOKEN, "1")).thenReturn(new Album("Melodrama", melodramaTracks));
 
         when(albums.getArtistAlbumFromCurrentYear(AUTH_TOKEN, "5")).thenReturn(null);
 
-        Tracks fosterTracks = new Tracks(asList(new Track("Sit Next to Me", "sntmId", "Foster The People", "Sacred Hearts Club")));
+        List<Track> fosterTracks = asList(new Track("Sit Next to Me", "sntmId", "Foster The People", "Sacred Hearts Club"));
         when(albums.getArtistAlbumFromCurrentYear(AUTH_TOKEN, "9")).thenReturn(new Album("Sacred Hearts Club", fosterTracks));
 
         Playlist createdPlaylist = playlist.createPlaylist(AUTH_TOKEN);
@@ -61,12 +61,12 @@ public class PlaylistTest {
     public void shouldCreatePlaylistForTheGivenYearGettingOnlyTheFirst4TracksOfAnAlbum() throws Exception {
         when(spotifyProfileService.getFollowedArtists(AUTH_TOKEN)).thenReturn(asList(new Artist("Lorde", "1")));
 
-        Tracks melodramaTracks = new Tracks(asList(new Track("Green Light", "id1", "Lorde", "Melodrama"),
+        List<Track> melodramaTracks = asList(new Track("Green Light", "id1", "Lorde", "Melodrama"),
                 new Track("Sober", "id2", "Lorde", "Melodrama"),
                 new Track("Homemade Dynamite", "id3", "Lorde", "Melodrama"),
                 new Track("The Louvre", "id4", "Lorde", "Melodrama"),
                 new Track("Liability", "id5", "Lorde", "Melodrama")
-        ));
+        );
         when(albums.getArtistAlbumFromCurrentYear(AUTH_TOKEN, "1")).thenReturn(new Album("Melodrama", melodramaTracks));
 
         Playlist createdPlaylist = playlist.createPlaylist(AUTH_TOKEN);

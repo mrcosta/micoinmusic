@@ -1,21 +1,18 @@
 package com.micoinmusic.domain;
 
-import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @AllArgsConstructor
 public class Album {
     private String name;
     private String id;
-
-    @SerializedName("release_date")
     private LocalDate releaseDate;
-
-    private Tracks tracks;
+    private List<Track> tracks;
 
     public Album(String name, String id) {
         this.name = name;
@@ -28,7 +25,7 @@ public class Album {
         this.releaseDate = releaseDate;
     }
 
-    public Album(String name, Tracks tracks) {
+    public Album(String name, List<Track> tracks) {
         this.name = name;
         this.tracks = tracks;
     }

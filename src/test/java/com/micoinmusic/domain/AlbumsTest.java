@@ -33,17 +33,16 @@ public class AlbumsTest {
         List<Album> arcadeFirealbums = asList(new Album("Everything Now", "idEN"), new Album("Reflektor (Deluxe)", "idRD"), new Album("Reflektor", "idR"));
         when(spotifyArtistsService.getAlbums(AUTH_TOKEN, "arcadeFireId")).thenReturn(arcadeFirealbums);
 
-        Tracks everythingNowtracks = new Tracks(asList(new Track("Everything_Now(continued)", "everythingNowContinuedId"), new Track("Everything Now", "everythingNowId")));
+        List<Track> everythingNowtracks = asList(new Track("Everything_Now(continued)", "everythingNowContinuedId"), new Track("Everything Now", "everythingNowId"));
         Album arcadeFirealbumWithReleaseDate = new Album("Everything Now", "idEN", LocalDate.now(), everythingNowtracks);
         when(spotifyArtistsService.getLatestAlbumReleaseDate(AUTH_TOKEN, "idEN")).thenReturn(arcadeFirealbumWithReleaseDate);
 
         Album album = albums.getArtistAlbumFromCurrentYear(AUTH_TOKEN, "arcadeFireId");
-        List<Track> tracks = album.getTracks().getItems();
 
         assertThat(album.getName(), is("Everything Now"));
         assertThat(album.getReleaseDate().getYear(), is(LocalDate.now().getYear()));
-        assertThat(tracks.get(0).getName(), is("Everything_Now(continued)"));
-        assertThat(tracks.get(1).getName(), is("Everything Now"));
+        assertThat(album.getTracks().get(0).getName(), is("Everything_Now(continued)"));
+        assertThat(album.getTracks().get(1).getName(), is("Everything Now"));
     }
 
     @Test

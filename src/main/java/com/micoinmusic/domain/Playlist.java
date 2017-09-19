@@ -37,7 +37,7 @@ public class Playlist {
     public Playlist createPlaylist(String authToken) {
         List<Artist> artists = profileService.getFollowedArtists(authToken);
         List<Album> currentYearAlbums = artists.stream().map(artist -> albums.getArtistAlbumFromCurrentYear(authToken, artist.getId())).filter(album -> album != null).collect(toList());
-        List<Track>  tracks = currentYearAlbums.stream().flatMap(album -> album.getTracks().getItems().stream().limit(MAX_TRACKS)).collect(toList());
+        List<Track>  tracks = currentYearAlbums.stream().flatMap(album -> album.getTracks().stream().limit(MAX_TRACKS)).collect(toList());
 
         return new Playlist(getPlaylistName(), tracks, LocalDate.now().getYear());
     }

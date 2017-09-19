@@ -4,7 +4,6 @@ import com.google.common.collect.ImmutableMap;
 import com.micoinmusic.spotify.HttpBuildResponses;
 import okhttp3.mockwebserver.MockResponse;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,8 +38,7 @@ public class PlaylistControllerIntegrationTest extends HttpBuildResponses {
     }
 
     @Test
-    @Ignore
-    public void shouldSayHi() throws Exception {
+    public void shouldCreatePlaylist() throws Exception {
         Map<String, MockResponse> responses = ImmutableMap.<String, MockResponse>builder()
             .put("/v1/me/following?type=artist&limit=50", getJsonMock("requests_stubs/profile/followed_artists.json"))
             .put("/v1/artists/00FQb4jTyendYWaN8pK0wa/albums?album_type=album&market=US&limit=50", getJsonMock("requests_stubs/albums/lana_albums.json"))

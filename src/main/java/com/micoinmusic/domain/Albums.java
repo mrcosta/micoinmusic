@@ -22,6 +22,7 @@ public class Albums {
         // TODO: retrieve the musics with popularity here
         if (artistHasAtLeastOneAlbum(albums)) {
             Album lastAlbumWithReleaseDate = albumsService.getLatestAlbumReleaseDate(authToken, albums.get(0).getId());
+
             return lastAlbumWithReleaseDate.isFromCurrentYear() ? lastAlbumWithReleaseDate : null;
         }
 
