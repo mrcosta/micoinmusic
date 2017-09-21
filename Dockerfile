@@ -1,4 +1,4 @@
-FROM openjdk:9-jre
+FROM openjdk:9-jre-slim
 
 COPY build/libs/*.jar /usr/app/
 WORKDIR /usr/app

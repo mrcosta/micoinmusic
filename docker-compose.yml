@@ -1,5 +1,5 @@
 test:
-  image: openjdk:9
+  image: openjdk:9-slim
   working_dir: /usr/app
   volumes:
     - .:/usr/app
