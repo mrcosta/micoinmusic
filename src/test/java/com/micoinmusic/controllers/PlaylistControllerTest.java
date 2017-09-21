@@ -9,8 +9,8 @@ import org.junit.Test;
 import org.springframework.boot.test.rule.OutputCapture;
 
 import java.time.LocalDate;
+import java.util.List;
 
-import static java.util.Arrays.asList;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -35,7 +35,7 @@ public class PlaylistControllerTest {
     public void shouldCreatePlaylistForTheGivenYear() {
         int currentYear = LocalDate.now().getYear();
 
-        Playlist stubedPlaylist = new Playlist("This 2018 in music", asList(new Track("Music", "id", "Artist", "Album")), currentYear);
+        Playlist stubedPlaylist = new Playlist("This 2018 in music", List.of(new Track("Music", "id", "Artist", "Album")), currentYear);
         when(playlistService.create("randomAuthToken")).thenReturn(stubedPlaylist);
         Playlist playlist = playlistController.create("randomAuthToken");
 

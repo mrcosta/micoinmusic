@@ -1,8 +1,6 @@
 package com.micoinmusic.controllers;
 
-import com.google.common.collect.ImmutableMap;
 import com.micoinmusic.spotify.HttpBuildResponses;
-import okhttp3.mockwebserver.MockResponse;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -39,14 +37,14 @@ public class PlaylistControllerIntegrationTest extends HttpBuildResponses {
 
     @Test
     public void shouldCreatePlaylist() throws Exception {
-        Map<String, MockResponse> responses = ImmutableMap.<String, MockResponse>builder()
-            .put("/v1/me/following?type=artist&limit=50", getJsonMock("requests_stubs/profile/followed_artists.json"))
-            .put("/v1/artists/00FQb4jTyendYWaN8pK0wa/albums?album_type=album&market=US&limit=50", getJsonMock("requests_stubs/albums/lana_albums.json"))
-            .put("/v1/artists/01F64hXfIisZbwBf1VCwQT/albums?album_type=album&market=US&limit=50", getJsonMock("requests_stubs/albums/carne_albums.json"))
-            .put("/v1/artists/02NfyD6AlLA12crYzw5YcR/albums?album_type=album&market=US&limit=50", getJsonMock("requests_stubs/albums/janes_albums.json"))
-            .put("/v1/albums?ids=7xYiTrbTL57QO0bb4hXIKo&market=US", getJsonMock("requests_stubs/albums/lana_albums_with_rd.json"))
-            .put("/v1/albums?ids=3krb3LsOogMryKOllCsYAL&market=US", getJsonMock("requests_stubs/albums/carne_albums_with_rd.json"))
-            .put("/v1/albums?ids=6XQRLJZqxADFmJYbDUOpGN&market=US", getJsonMock("requests_stubs/albums/janes_albums_with_rd.json")).build();
+        Map responses = Map.of(
+                "/v1/me/following?type=artist&limit=50", getJsonMock("requests_stubs/profile/followed_artists.json"),
+                "/v1/artists/00FQb4jTyendYWaN8pK0wa/albums?album_type=album&market=US&limit=50", getJsonMock("requests_stubs/albums/lana_albums.json"),
+                "/v1/artists/01F64hXfIisZbwBf1VCwQT/albums?album_type=album&market=US&limit=50", getJsonMock("requests_stubs/albums/carne_albums.json"),
+                "/v1/artists/02NfyD6AlLA12crYzw5YcR/albums?album_type=album&market=US&limit=50", getJsonMock("requests_stubs/albums/janes_albums.json"),
+                "/v1/albums?ids=7xYiTrbTL57QO0bb4hXIKo&market=US", getJsonMock("requests_stubs/albums/lana_albums_with_rd.json"),
+                "/v1/albums?ids=3krb3LsOogMryKOllCsYAL&market=US", getJsonMock("requests_stubs/albums/carne_albums_with_rd.json"),
+                "/v1/albums?ids=6XQRLJZqxADFmJYbDUOpGN&market=US", getJsonMock("requests_stubs/albums/janes_albums_with_rd.json"));
         setResponses(responses);
 
         mvc.perform(post("/playlists?authToken=BQAzjAmVDmUxeu").accept(APPLICATION_JSON))
