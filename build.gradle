@@ -5,6 +5,8 @@ plugins {
     id 'jacoco'
 }
 
+sourceCompatibility = 1.9
+
 repositories {
     jcenter()
 }

@@ -4,6 +4,7 @@ import com.micoinmusic.domain.Playlist;
 import com.micoinmusic.domain.Track;
 import com.micoinmusic.domain.services.PlaylistService;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.springframework.boot.test.rule.OutputCapture;
@@ -41,6 +42,14 @@ public class PlaylistControllerTest {
 
         assertThat(playlist.getName(), is("This 2018 in music"));
         assertThat(playlist.getYear(), is(currentYear));
+        this.outputCapture.expect(containsString("creating playlist with the following authorization token: randomAuthToken"));
+    }
+
+    @Test
+    @Ignore
+    public void shouldThrowAnErrorWithDetailedInformationWhenAuthTokenIsNotSent() {
+        Playlist playlist = playlistController.create(null);
+
         this.outputCapture.expect(containsString("creating playlist with the following authorization token: randomAuthToken"));
     }
 }

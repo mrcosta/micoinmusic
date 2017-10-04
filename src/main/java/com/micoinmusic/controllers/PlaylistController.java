@@ -4,12 +4,9 @@ import com.micoinmusic.domain.Playlist;
 import com.micoinmusic.domain.services.PlaylistService;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.validation.constraints.NotNull;
-import javax.ws.rs.POST;
-import javax.ws.rs.QueryParam;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
@@ -25,9 +22,8 @@ public class PlaylistController {
         this.playlistService = playlistService;
     }
 
-    @POST
-	@RequestMapping("/playlists")
-    public Playlist create(@NotNull @QueryParam("authToken") String authToken) {
+    @PostMapping("/playlists")
+    public Playlist create(@RequestParam("authToken") String authToken) {
         logger.info("creating playlist with the following authorization token: " + authToken);
         return playlistService.create(authToken);
     }

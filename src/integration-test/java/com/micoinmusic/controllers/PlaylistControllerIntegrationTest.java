@@ -2,6 +2,7 @@ package com.micoinmusic.controllers;
 
 import com.micoinmusic.spotify.HttpBuildResponses;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +51,38 @@ public class PlaylistControllerIntegrationTest extends HttpBuildResponses {
         mvc.perform(post("/playlists?authToken=BQAzjAmVDmUxeu").accept(APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().json(toString("responses/playlist.json")));
+    }
+
+    @Test
+    @Ignore
+    public void shouldResponseWithTheCauseWhenSendingAnExpiredValidToken() throws Exception {
+        mvc.perform(post("/playlists").accept(APPLICATION_JSON))
+                .andExpect(status().isBadRequest())
+                .andExpect(content().json("oi"));
+    }
+
+    @Test
+    @Ignore
+    public void shouldResponseWithTheCauseWhenSendingAnInvalidValidToken() throws Exception {
+        mvc.perform(post("/playlists").accept(APPLICATION_JSON))
+                .andExpect(status().isBadRequest())
+                .andExpect(content().json("oi"));
+    }
+
+    @Test
+    @Ignore
+    public void shouldResponseWithTheCauseWhenNotSendingTheAuthToken() throws Exception {
+        mvc.perform(post("/playlists").accept(APPLICATION_JSON))
+                .andExpect(status().isBadRequest())
+                .andExpect(content().json("oi"));
+    }
+
+    @Test
+    @Ignore
+    public void shouldResponseWithTheCauseWhenSendingAnEmptyAuthToken() throws Exception {
+        mvc.perform(post("/playlists?authToken=").accept(APPLICATION_JSON))
+                .andExpect(status().isBadRequest())
+                .andExpect(content().json("oi"));
     }
 
     private String toString(String jsonPath) {
