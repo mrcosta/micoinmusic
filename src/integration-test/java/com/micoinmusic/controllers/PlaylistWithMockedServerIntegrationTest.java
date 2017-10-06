@@ -26,7 +26,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-public class PlaylistControllerIntegrationTest extends HttpBuildResponses {
+public class PlaylistWithMockedServerIntegrationTest extends HttpBuildResponses {
 
     @Autowired
     private MockMvc mvc;
@@ -64,14 +64,6 @@ public class PlaylistControllerIntegrationTest extends HttpBuildResponses {
     @Test
     @Ignore
     public void shouldResponseWithTheCauseWhenSendingAnInvalidValidToken() throws Exception {
-        mvc.perform(post("/playlists").accept(APPLICATION_JSON))
-                .andExpect(status().isBadRequest())
-                .andExpect(content().json("oi"));
-    }
-
-    @Test
-    @Ignore
-    public void shouldResponseWithTheCauseWhenNotSendingTheAuthToken() throws Exception {
         mvc.perform(post("/playlists").accept(APPLICATION_JSON))
                 .andExpect(status().isBadRequest())
                 .andExpect(content().json("oi"));
