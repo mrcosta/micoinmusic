@@ -2,7 +2,6 @@ package com.micoinmusic.controllers;
 
 import io.restassured.RestAssured;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.context.embedded.LocalServerPort;
@@ -26,16 +25,14 @@ public class PlaylistWithRealServerIntegrationTest {
     }
 
     @Test
-    @Ignore
     public void shouldResponseWithTheCauseWhenNotSendingTheAuthToken() throws Exception {
         given().contentType("application/json").
         when().post("playlists").
         then().statusCode(SC_BAD_REQUEST).body(sameJSONAs(
-                "{ 'error': {" +
-                        "'status_id': 400," +
-                        "'status': 'BAD_REQUEST'," +
-                        "'message': 'Required String parameter 'authToken' is not present'" +
-                    "}" +
+                "{\"error\":" +
+                        "{\"status_id\":400," +
+                        "\"status\":\"BAD_REQUEST\"," +
+                        "\"message\":\"Required String parameter 'authToken' is not present\"}" +
                 "}"
         ));
     }

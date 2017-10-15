@@ -11,3 +11,7 @@ server:
 
 spotify:
   base_url: https://api.spotify.com/
+
+spring:
+  jackson:
+    property-naming-strategy: SNAKE_CASE

@@ -11,3 +11,7 @@ server:
 
 spotify:
   base_url: http://localhost:4040/
+
+spring:
+  jackson:
+    property-naming-strategy: SNAKE_CASE
